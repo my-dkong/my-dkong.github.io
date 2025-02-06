@@ -1,11 +1,31 @@
 <!doctype html>
 <html>
   <head>
-    <title>Home | mydkong</title>
+    <meta charset="UTF-8">
+    <title>Erreur 404 | mydkong</title>
+    <link rel="stylesheet" href="home/paramDkong/css/styles.css">
+    <style>
+      .root{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ra{
+        width: 100%;
+        background: #f00;
+      }
+    </style>
   </head>
   <body>
+    <div class="root">
+      <h1>Oups, la page ne semble pas exister !</h1>
+      <button class="ra">Retour à l'accueil</button>
+    </div>
     <script>
-      window.location.href="/"
+      document.querySelector(".ra").addEventListener("click", ()=>{
+        window.location.href="/"
+      })
     </script>
   </body>
 </html>
