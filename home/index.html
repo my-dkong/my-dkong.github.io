@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="paramDkong/css/styles.css"/>
+		<title>
+                        Cookies | Donkey Kong
+		</title>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script>
+			if(navigator.browserLanguage)
+ {
+ var language = navigator.browserLanguage ;
+  } else {
+ var language = navigator.language ;
+  }
+			if(!language.indexOf('fr') > -1)
+ {
+   document.getElementsByTagName("title")[1].ownerDocument.title="Language Error | Donkey Kong";
+  }
+		</script>
+	</head>
+	<body id="body"><div align="center">
+		<script async>if(navigator.browserLanguage)
+ {
+ var language = navigator.browserLanguage ;
+  } else {
+ var language = navigator.language ;
+  }
+if(language.indexOf('fr') > -1)
+ {
+ window.location.href="../cookies/";
+  } else {
+ document.getElementById("body").innerHTML="The website does not currently exist in your language. We apologize for the inconvenience.";
+  }</script>
+	</div></body></html>

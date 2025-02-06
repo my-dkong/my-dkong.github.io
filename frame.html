@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Frame Title for DK Node.JS Server
+		</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" id="styles" href="home/paramDkong/css/styles.css"/>
+		<link rel="shortcut icon" id="icone" href="home/paramDkong/images/petitesIcones/dk.png"/>
+	</head>
+	<body>
+		<iframe id="frame" width="1600" height="900" src="about:blank" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<script type="text/javascript">
+			var title=document.getElementsByTagName("title")[0].ownerDocument.title;
+			var styles=document.getElementById("styles");
+			var icone=document.getElementById("icone");
+			var frame=document.getElementById("frame");
+			var frameDocument = frame.contentDocument || frame.contentWindow.document;
+			var frameTitle=frameDocument.getElementsByTagName("title")[0].ownerDocument.title;
+			var frameStylesDirectory;
+			if(frameDocument.getElementsByTagName("link")[0].rel=="stylesheet"){
+				frameStylesDirectory=frameDocument.getElementsByTagName("link")[0].sheet.href;
+			}else{
+				frameStylesDirectory=frameDocument.getElementsByTagName("link")[1].sheet.href;
+			}
+			var frameIconDirectory;
+			if(frameDocument.getElementsByTagName("link")[0].rel=="shortcut icon"){
+                                frameIconDirectory=frameDocument.getElementsByTagName("link")[0].href;
+                        }else{
+                                frameIconDirectory=frameDocument.getElementsByTagName("link")[1].href;
+
+
+			frame.onload=function(){
+				frame.width=screen.width;
+				frame.height=screen.height;
+				titre.innerHTML=frameDocument.getElementsByTagName("title")[0].ownerDocument.title;
+
+			}
+		</script>

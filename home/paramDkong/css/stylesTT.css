@@ -1,0 +1,137 @@
+       /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+      /*           A FILE STYLESTT.CSS         */
+     /*                                       */
+    /* COPYRIGHT © | 2024 DONKEYKONG CONPANY */
+   /*                                       */
+  /*              CSS3 FILE                */
+ /*              CSS3 PROG                */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+@font-face{
+  font-family: 'font-tt';
+  src: url('pixelmono.ttf'); 
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: font-tt;
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+}
+
+a:hover{
+	color: #ff0;
+	background-color: #000;
+}
+
+.jaune {
+	color: #ff0;
+}
+
+.rouge {
+	color: #f00;
+}
+
+.noir {
+	color: #000;
+}
+
+.surligner-bleu {
+	background-color: #00f;
+}
+
+a.non-souligne {
+	text-decoration: none;
+	color: #fff;
+}
+
+.surligner-rouge {
+	background-color: #f00;
+}
+
+.textecentre{
+	text-align: center;
+}
+
+a.souligne-blanc {
+	text-decoration-line: underline;
+	text-decoration-color: #fff;
+	color: #fff;
+}
+
+.surligner-blanc {
+	background-color: #fff;
+}
+
+.arr5px{
+	border: none;
+	border-radius: 5px;
+}
+
+.arr10px{
+	border: none;
+	border-radius: 10px;
+}
+
+.arr15px{
+	border: none;
+	border-radius: 15px;
+}
+
+.btn {
+    height: 100px;
+    width: 100px;
+    background: crimson;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    background-color: #ff0;
+}
+.icone {
+    width: 50px;
+}
+
+.box{
+        float: center;
+        width: 300px;
+        height: 100%;
+        border-radius: 30px;
+        padding: 0.5em;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+	gap: 30px;
+}
+
+.discord{
+  display: grid;
+  position: fixed;
+  background: #5865f2;
+  width: 110px;
+  height: 110px;
+  border: none;
+  border-radius: 10px;
+  place-items: center right; 
+  ustify-content: right; 
+  right: 0px;
+  bottom: 50%;
+  color: #000;
+  text-decoration: none;
+}
+
+.discord:hover{
+  color: #000;
+  background: #5865f2;
+}

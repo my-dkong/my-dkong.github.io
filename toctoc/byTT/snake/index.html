@@ -1,0 +1,289 @@
+<!DOCTYPE html><!-- Axel Corp. Tous droits réservés -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Le serpent</title>
+</head>
+<body>
+    <div class="root" align="center">
+        <div>
+            <div class="flex">
+                <img src="//mydkong.github.io/favicon.ico" class="icon">
+                <div class="header">
+                    <p class="h1">Jeu du serpent</p>
+                    <p class="italic">Par&nbsp;<a width="30" height="30" href="/toctoc">TocToc</a></p>
+                </div>
+                <div class="link-snake-div">
+                    <button class="link-snake-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg>Aller sur Axel Corp.</button>
+                </div>
+            </div>
+            <div class="body">
+                <canvas id="canvas" width="500" height="500"></canvas>
+                <button hidden class="rejouer">&nbsp;Rejouer&nbsp;</button>
+            </div>
+            <div class="controls">
+                <div class="left-arrow arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+                </div>
+                <div class="up-arrow arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg>
+                </div>
+                <div class="right-arrow arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+                </div>
+                <div class="down-arrow arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var width = canvas.width;
+    var height = canvas.height;
+
+    var blockSize = 10;
+    var widthInBlocks = width / blockSize;
+    var heightInBlocks = height / blockSize;
+
+    var score = 0;
+
+    var drawBorder = function () {
+      ctx.fillStyle = "#afd400";
+      ctx.fillRect(0, 0, width, blockSize);
+      ctx.fillRect(0, height - blockSize, width, blockSize);
+      ctx.fillRect(0, 0, blockSize, height);
+      ctx.fillRect(width - blockSize, 0, blockSize, height);
+    };
+
+    var drawScore = function () {
+      ctx.font = "20px Arial, sans-serif";
+      ctx.fillStyle = "#6aa100";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "top";
+      ctx.fillText("Score : " + score, blockSize, blockSize);
+    };
+
+    var gameOver = function () {
+      playing = false;
+      ctx.font = "60px Arial, sans-serif";
+      ctx.fillStyle = "#6aa100";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("Perdu !", width / 2, height / 2);
+      document.querySelector(".rejouer").hidden=false;
+      document.querySelector(".controls").innerHTML="";
+    };
+
+    var circle = function (x, y, radius, fillCircle) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+      if (fillCircle) {
+        ctx.fill();
+      } else {
+        ctx.stroke();
+      }
+    };
+
+    var Block = function (col, row) {
+      this.col = col;
+      this.row = row;
+    };
+
+    Block.prototype.drawSquare = function (color) {
+      var x = this.col * blockSize;
+      var y = this.row * blockSize;
+      ctx.fillStyle = color;
+      ctx.fillRect(x, y, blockSize, blockSize);
+    };
+
+    Block.prototype.drawCircle = function (color) {
+      var centerX = this.col * blockSize + blockSize / 2;
+      var centerY = this.row * blockSize + blockSize / 2;
+      ctx.fillStyle = color;
+      circle(centerX, centerY, blockSize / 2, true);
+    };
+
+    Block.prototype.equal = function (otherBlock) {
+      return this.col === otherBlock.col && this.row === otherBlock.row;
+    };
+
+    var Snake = function () {
+      this.segments = [
+        new Block(7, 5),
+        new Block(6, 5),
+        new Block(5, 5)
+      ];
+
+      this.direction = "right";
+      this.nextDirection = "right";
+    };
+
+    Snake.prototype.draw = function () {
+      this.segments[0].drawSquare("#00a11c");
+      var isEvenSegment = false;
+
+      for (var i = 1; i < this.segments.length; i++) {
+        if (isEvenSegment) {
+          this.segments[i].drawSquare("#56ff56");
+        } else {
+          this.segments[i].drawSquare("#538d3f");
+        }
+
+        isEvenSegment = !isEvenSegment;
+      }
+    };
+
+    Snake.prototype.move = function () {
+      var head = this.segments[0];
+      var newHead;
+
+      this.direction = this.nextDirection;
+
+      if (this.direction === "right") {
+        newHead = new Block(head.col + 1, head.row);
+      } else if (this.direction === "down") {
+        newHead = new Block(head.col, head.row + 1);
+      } else if (this.direction === "left") {
+        newHead = new Block(head.col - 1, head.row);
+      } else if (this.direction === "up") {
+        newHead = new Block(head.col, head.row - 1);
+      }
+
+      if (this.checkCollision(newHead)) {
+        gameOver();
+        return;
+      }
+
+      this.segments.unshift(newHead);
+
+      if (newHead.equal(apple.position)) {
+        score++;
+        animationTime -= 5;
+        apple.move(this.segments);
+      } else {
+        this.segments.pop();
+      }
+    };
+
+    Snake.prototype.checkCollision = function (head) {
+      var leftCollision = (head.col === 0);
+      var topCollision = (head.row === 0);
+      var rightCollision = (head.col === widthInBlocks - 1);
+      var bottomCollision = (head.row === heightInBlocks - 1);
+
+      var wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
+
+      var selfCollision = false;
+
+      for (var i = 0; i < this.segments.length; i++) {
+        if (head.equal(this.segments[i])) {
+          selfCollision = true;
+        }
+      }
+
+      return wallCollision || selfCollision;
+    };
+
+    Snake.prototype.setDirection = function (newDirection) {
+      if (this.direction === "up" && newDirection === "down") {
+        return;
+      } else if (this.direction === "right" && newDirection === "left") {
+        return;
+      } else if (this.direction === "down" && newDirection === "up") {
+        return;
+      } else if (this.direction === "left" && newDirection === "right") {
+        return;
+      }
+
+      this.nextDirection = newDirection;
+    };
+
+    var Apple = function () {
+      this.position = new Block(10, 10);
+    };
+
+    Apple.prototype.draw = function () {
+      this.position.drawCircle("LimeGreen");
+    };
+
+    Apple.prototype.move = function (occupiedBlocks) {
+      var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1;
+      var randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
+      this.position = new Block(randomCol, randomRow);
+
+      for (var i = 0; i < occupiedBlocks.length; i++) {
+        if (this.position.equal(occupiedBlocks[i])) {
+          this.move(occupiedBlocks);
+          return;
+        }
+      }
+    };
+
+    var snake = new Snake();
+    var apple = new Apple();
+
+    var playing = true;
+    var animationTime = 100;
+
+    var gameLoop = function () {
+      ctx.clearRect(0, 0, width, height);
+      drawScore();
+      snake.move();
+      snake.draw();
+      apple.draw();
+      drawBorder();
+
+      if (playing) {
+        setTimeout(gameLoop, animationTime);
+      }
+    };
+
+    gameLoop();
+
+    var directions = {
+      37: "left",
+      38: "up",
+      39: "right",
+      40: "down"
+    };
+
+    $("body").keydown(function (event) {
+      var newDirection = directions[event.keyCode];
+      if (newDirection !== undefined) {
+        snake.setDirection(newDirection);
+      }
+    });
+
+    document.querySelector(".rejouer").addEventListener("click", ()=>{
+        window.location.reload();
+    })
+
+    document.querySelector(".left-arrow").addEventListener("click", ()=>{
+        snake.setDirection("left");
+    })
+
+    document.querySelector(".up-arrow").addEventListener("click", ()=>{
+        snake.setDirection("up");
+    })
+
+    document.querySelector(".right-arrow").addEventListener("click", ()=>{
+        snake.setDirection("right");
+    })
+
+    document.querySelector(".down-arrow").addEventListener("click", ()=>{
+        snake.setDirection("down");
+    })
+
+    document.querySelector(".link-snake-div").addEventListener("click", ()=>{
+        window.location.href="//axelcorp.netlify.app/snake-game/";
+    })
+    </script>
+</body>
+</html>

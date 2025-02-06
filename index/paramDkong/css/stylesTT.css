@@ -1,0 +1,55 @@
+/* A FILE STYLES.CSS */
+/* CSS3 FILE */
+/* CSS3 PROG */
+
+body {
+	font-family: "Arial", sans-serif;
+	color: #fff;
+	background-image: url("../images/fontTT.png");
+	background-size: 150px;
+}
+
+.cache{
+	height: 0;
+	width: 0;
+	display: none;visibility:hidden;
+}
+
+.jaune {
+	color: #ff0;
+}
+
+.rouge {
+	color: #f00;
+}
+
+.noir {
+	color: #000;
+}
+
+.surligner-bleu {
+	background-color: #00f;
+}
+
+a.non-souligne {
+	text-decoration: none;
+	color: #fff;
+}
+
+.surligner-rouge {
+	background-color: #f00;
+}
+
+.textecentre{
+	text-align: center;
+}
+
+a.souligne-blanc {
+	text-decoration-line: underline;
+	text-decoration-color: #fff;
+	color: #fff;
+}
+
+.surligner-blanc {
+	background-color: #fff;
+}

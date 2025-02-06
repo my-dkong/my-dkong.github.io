@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+        <head>
+                <link rel="shortcut icon" type="image/x-icon" href="../../../../home/paramDkong/images/petitesIcones/TT.png">
+                <meta charset="UTF-8">
+                <title>
+                        Fall Guys Solo (Scratch) | TocToc
+                </title></head><body><div id="styles">
+                <link rel="stylesheet" href="../../../../index/paramDkong/css/stylesTT.css"></div>
+        </head>
+        <body>
+        <div align="center" id="corps"><div id="root">
+                <h1> <a href="../../../../home" class="non-souligne">
+                        <img src="../../../../home/paramDkong/images/petitesIcones/TT.png" widht="40" height="40"><span class="rouge textecentre">
+                                <span class="jaune">TocToc
+                        </span>
+                </a></h1>
+                <p>
+                        </p><h2 id="titre">
+                                <span>Bienvenue sur <span class="jaune">TocToc</span></span><span><br/></h2><h4><a href="https://mydkong.github.io/toctoc" class="souligne-blanc">mydkong.github.io/toctoc</a></h4></span>
+                        <div id="insert">
+                                <p></p><div id="corps"><h2>Intro à Fall Guys</h2><iframe width="560" height="315" style="border: none;border-radius: 15px;" src="https://www.youtube.com/embed/M4nXFK9Nt6k?si=Ibko0t5xJTChgWHj" title="Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe><br/><br><input style="border: none;border-radius: 5px;" type="button" value="OK" class="surligner-bleu" onclick="ok()"></div><script type="text/javascript">var ok=function(){document.getElementById("corps").innerHTML='<p>Fall Guys Solo (de <a href="https://scratch.mit.edu">Scratch</a>) :</p><iframe src="https://scratch.mit.edu/projects/437563638/embed" style="border-radius: 15px;" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe><br/><br/><input type="button" class="surligner-bleu" style="border: none;border-radius: 5px;" value="Basculer vers le mode Réseau (Joueurs virtuels)" onclick="window.location.href=\'../421062771/421062771.html\'"/>';};</script>
+                        </div></div><input type="button" id="fullscreen" class="surligner-bleu cache" style="border: none;border-radius: 5px;" value="Basculer en plein écran" onclick="toggleFullscreen();var fullscreen = document.getElementById(`fullscreen`);fullscreen.class=`surligner-bleu`;if(elem){fullscreen.value=`Désactiver le mode plein écran`}else{fullscreen.value=`Basculer en plein écran`};elem=!elem"/>
+                        <div id="scratch" class="cache"><iframe src="https://scratch.mit.edu/projects/437563638/embed" style="border-radius: 15px;" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe></div>
+                        <script>
+                           function getFullscreenElement() {
+                              return document.fullscreenElement   //standard property
+                              || document.webkitFullscreenElement //safari/opera support
+                              || document.mozFullscreenElement    //firefox support
+                              || document.msFullscreenElement;    //ie/edge support
+                           }
+ 
+                           function toggleFullscreen() {
+                              if(getFullscreenElement()) {
+                                 document.exitFullscreen();
+                              }else {
+                        document.documentElement.requestFullscreen().catch(console.log);
+                              }
+                           }
+                        document.addEventListener('dblclick', () => {
+                              toggleFullscreen();
+                           });
+                        </script>
+                        <script>
+                                function getParameterByName(name){
+                                        var url = new URL(window.location.href), fs=document.getElementById("fullscreen");
+                                        var search_params = new URLSearchParams(url.search); 
+                                        if(search_params.has(name)) {
+                                                var name2 = search_params.get(name);
+                                                return name2;
+                                        }
+                                };
+                                var elem = true;
+                        </script>
+                        <script type="text/javascript">
+                                if(getParameterByName("p")=='1'){
+                                        document.getElementById("insert").innerHTML='<p>Fall Guys Solo (de <a href="https://scratch.mit.edu">Scratch</a>) :</p><iframe src="https://scratch.mit.edu/projects/437563638/embed" style="border-radius: 15px;" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe><br/><br/><input type="button" class="surligner-bleu" style="border: none;border-radius: 5px;" value="Basculer vers le mode Réseau (Joueurs virtuels)" onclick="window.location.href=\'../421062771/421062771.html\'"/><br/><br/>';
+										fs.className="surligner-bleu";
+								};
+
+                                if(getParameterByName("f")=='1'){
+                                        alert('Pour activer le mode Plein écran, Appuyez sur "Basculer en plein écran".')
+                                }
+                        </script>
+                </body>
+        </div>
+</html>
