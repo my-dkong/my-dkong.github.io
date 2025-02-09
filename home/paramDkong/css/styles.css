@@ -17,6 +17,7 @@ body {
 body {
 	background-image: url("../images/font.png");
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .jaune {
@@ -56,25 +57,4 @@ a.souligne-blanc {
 
 .surligner-blanc {
 	background-color: #ffffff;
-}
-
-#collection-gameon{
-	background-image: url("https://uploads.scratch.mit.edu/galleries/thumbnails/33487428.png");
-}
-
-#collection-flappybird{
-	background-image: url("https://cdn2.scratch.mit.edu/get_image/gallery/34054747_170x100.png");
-	color: #000000;
-}
-
-#collection-supermariobros{
-	background-image: url("https://uploads.scratch.mit.edu/galleries/thumbnails/34054763.png");
-}
-
-#collection-halloween{
-	background-image: url("https://cdn2.scratch.mit.edu/get_image/gallery/34067215_170x100.png");
-}
-
-#jv-sans-collection{
-	background-image: url("https://www.insidehook.com/wp-content/uploads/2021/06/Punctuation.jpg?fit=1200%2C800");
 }
