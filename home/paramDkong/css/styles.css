@@ -12,12 +12,20 @@ body {
 	font-family: Arial, sans-serif;
 	color: #ffffff;
 	text-align: center;
-}
-
-body {
 	background-image: url("../images/font.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+button, input[type="button"], input[type="submit"]{
+	height: 40px;
+	cursor: pointer;
+	border: none;
+	border-radius: 20px!important;
+}
+
+button[type="submit"], input[type="submit"]{
+	background: #ff0013;
 }
 
 .jaune {
