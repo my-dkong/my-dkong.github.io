@@ -21,11 +21,16 @@ button, input[type="button"], input[type="submit"]{
 	height: 40px;
 	cursor: pointer;
 	border: none;
-	border-radius: 20px!important;
+	border-radius: 20px;
 }
 
 button[type="submit"], input[type="submit"]{
-	background: #ff0013;
+	background: #ff0200;
+}
+
+button[type="submit"]:hover, input[type="submit"]:hover{
+	background: #ff504e;
+	border-radius: 0;
 }
 
 .jaune {
