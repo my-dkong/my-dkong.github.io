@@ -25,11 +25,11 @@ button, input[type="button"], input[type="submit"]{
 	-moz-border-radius: 20px;
 }
 
-button[type="submit"], input[type="submit"]{
+button[type="submit"], input[type="submit"], .ra{
 	background: #ff0200;
 }
 
-button[type="submit"]:hover, input[type="submit"]:hover{
+button[type="submit"]:hover, input[type="submit"]:hover, .ra:hover{
 	background: #ff504e;
 	border-radius: 0;
 	-moz-border-radius: 0;
