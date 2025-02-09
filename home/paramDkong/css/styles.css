@@ -22,6 +22,7 @@ button, input[type="button"], input[type="submit"]{
 	cursor: pointer;
 	border: none;
 	border-radius: 20px;
+	-moz-border-radius: 20px;
 }
 
 button[type="submit"], input[type="submit"]{
@@ -31,6 +32,7 @@ button[type="submit"], input[type="submit"]{
 button[type="submit"]:hover, input[type="submit"]:hover{
 	background: #ff504e;
 	border-radius: 0;
+	-moz-border-radius: 0;
 }
 
 .ra{
