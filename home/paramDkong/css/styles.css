@@ -33,6 +33,10 @@ button[type="submit"]:hover, input[type="submit"]:hover{
 	border-radius: 0;
 }
 
+.ra{
+	font-size: 2rem;
+}
+
 .jaune {
 	color: #ffff00;
 }
