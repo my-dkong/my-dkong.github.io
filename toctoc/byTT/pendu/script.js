@@ -13,6 +13,8 @@ var mots = [
 // Choisir un mot secret au hasard
 var motSecret = mots[Math.floor(Math.random() * mots.length)];
 var essais=11;
+var canvas=document.querySelector("canvas");
+var ctx=canvas.getContext("2d");
 
 var alphabet = {
 	a: false,
@@ -42,6 +44,56 @@ var alphabet = {
 	y: false,
 	z: false
 }
+
+var cercle=(x, y, rayon, cerclePlein, epaisseur, couleur)=>{
+	if (cerclePlein) {
+		ctx.strokeStyle=couleur;
+	} else {
+		ctx.fillStyle=couleur;
+	}
+	ctx.lineWidth = epaisseur;
+	ctx.beginPath();
+	ctx.arc(x, y, rayon, 0, Math.PI * 2, false);
+	if (cerclePlein) {
+		ctx.fill();
+	} else {
+		ctx.stroke();
+	}
+}
+
+var membres=[
+	()=>{
+		cercle(250, 225, 20, true, 5, "#000");
+	},
+	()=>{
+		ctx.strokeStyle="#000";
+		ctx.lineWidth=5;
+		ctx.beginPath();
+		ctx.moveTo(250, 225);
+		ctx.lineTo(250, 275);
+		ctx.stroke();
+	},
+	()=>{
+		ctx.strokeStyle="#000";
+		ctx.lineWidth=5;
+		ctx.beginPath();
+		ctx.moveTo(250, 245);
+		ctx.lineTo(230, 230);
+	},
+	()=>{
+		ctx.strokeStyle=#000";
+		ctx.lineWidth=5;
+		ctx.beginPath();
+		ctx.moveTo(250, 245);
+		ctx.lineTo(230, 260);
+	},
+	()=>{
+		ctx.strokeStyle="#000";
+		ctx.lineWidth=5;
+		ctx.beginPath();
+		//////////////////////////////////////////////////////////
+	}
+]
 
 // Créer le tableau de réponses
 var tableauReponses = [];
