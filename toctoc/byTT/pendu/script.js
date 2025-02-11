@@ -91,7 +91,15 @@ var membres=[
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		//////////////////////////////////////////////////////////
+		ctx.moveTo(250, 255);
+		ctx.lineTo(270, 260);
+	},
+	()=>{
+		ctx.strokeStyle="#000";
+		ctx.lineWidth=5;
+		ctx.beginPath();
+		ctx.moveTo(250, 255);
+		ctx.lineTo(230, 260)
 	}
 ]
 
