@@ -94,7 +94,7 @@ var membres=[
 		ctx.lineWidth=5;
 		ctx.beginPath();
 		ctx.moveTo(250, 275);
-		ctx.lineTo(260, 270);
+		ctx.lineTo(230, 295);
 		ctx.stroke();
 	},
 	function(){
@@ -102,7 +102,7 @@ var membres=[
 		ctx.lineWidth=5;
 		ctx.beginPath();
 		ctx.moveTo(250, 275);
-		ctx.lineTo(260, 230);
+		ctx.lineTo(270, 295);
 		ctx.stroke();
 	}
 ]
