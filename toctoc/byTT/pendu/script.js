@@ -77,7 +77,7 @@ var membres=[
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 245);
+		ctx.moveTo(250, 265);
 		ctx.lineTo(230, 230);
 		ctx.stroke();
 	},
@@ -85,7 +85,7 @@ var membres=[
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 245);
+		ctx.moveTo(250, 265);
 		ctx.lineTo(230, 260);
 		ctx.stroke();
 	},
@@ -93,16 +93,16 @@ var membres=[
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 255);
-		ctx.lineTo(270, 260);
+		ctx.moveTo(250, 275);
+		ctx.lineTo(260, 270);
 		ctx.stroke();
 	},
 	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 255);
-		ctx.lineTo(230, 260);
+		ctx.moveTo(250, 275);
+		ctx.lineTo(260, 230);
 		ctx.stroke();
 	}
 ]
