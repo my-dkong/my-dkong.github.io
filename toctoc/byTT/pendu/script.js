@@ -81,7 +81,7 @@ var membres=[
 		ctx.lineTo(230, 230);
 	},
 	()=>{
-		ctx.strokeStyle=#000";
+		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
 		ctx.moveTo(250, 245);
