@@ -12,7 +12,7 @@ var mots = [
 
 // Choisir un mot secret au hasard
 var motSecret = mots[Math.floor(Math.random() * mots.length)];
-var essais=5;
+var essais=6;
 var canvas=document.querySelector("canvas");
 var ctx=canvas.getContext("2d");
 
