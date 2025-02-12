@@ -147,7 +147,7 @@ while (nombreLettresManquantes > 0) {
 			}
 			if (s=true) {
 				essais--;
-				membres[5-essai-1]();
+				membres[5-essais-1]();
 			}
 			alphabet[reponse]=true;
 		} else {
