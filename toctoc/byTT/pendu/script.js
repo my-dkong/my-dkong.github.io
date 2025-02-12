@@ -62,10 +62,10 @@ var cercle=(x, y, rayon, cerclePlein, epaisseur, couleur)=>{
 }
 
 var membres=[
-	()=>{
+	function(){
 		cercle(250, 225, 20, true, 5, "#000");
 	},
-	()=>{
+	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
@@ -73,28 +73,28 @@ var membres=[
 		ctx.lineTo(250, 275);
 		ctx.stroke();
 	},
-	()=>{
+	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
 		ctx.moveTo(250, 245);
 		ctx.lineTo(230, 230);
 	},
-	()=>{
+	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
 		ctx.moveTo(250, 245);
 		ctx.lineTo(230, 260);
 	},
-	()=>{
+	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
 		ctx.moveTo(250, 255);
 		ctx.lineTo(270, 260);
 	},
-	()=>{
+	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
@@ -133,14 +133,18 @@ while (nombreLettresManquantes > 0) {
 	} else {
 		// Mettre à jour l'état de la partie
 		if (!alphabet[reponse]) {
+			var s=true;
 			for (var j = 0; j < motSecret.length; j++) {
 				if (motSecret[j] === reponse) {
 					tableauReponses[j] = reponse;
 					nombreLettresManquantes--;
+					s=false;
 				}
 			}
+			if (s=true) {
+				essais--;
+			}
 			alphabet[reponse]=true;
-			essais--;
 		} else {
 			alert("La lettre a déjà été mentionnée.")
 		}
