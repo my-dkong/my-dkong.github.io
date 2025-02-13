@@ -107,6 +107,56 @@ var membres=[
 	}
 ]
 
+var event=new Object();
+event.select=(str)=>{
+	return document.querySelector(str);
+}
+event.montrer=(elem)=>{
+	event.select(elem).hidden=false;
+}
+event.cacher=(elem)=>{
+	event.select(elem).hidden="";
+}
+event.alert=(str, tt)=>{
+	event.select(".absolute").hidden=false;
+	event.select(".title").innerHTML=tt;
+	event.select(".paragraph").innerHTML=str;
+	event.cacher(".letter");
+	event.cacher(".annuler");
+	event.montrer(".ok");
+	event.select(".ok").addEventListener("click", ()=>{
+		return;
+	})
+}
+event.confirm=(str, tt)=>{
+	event.select(".absolute").hidden=false;
+	event.select(".title").innerHTML=tt;
+	event.select(".paragraph").innerHTML=str;
+	event.cacher(".letter");
+	event.montrer(".annuler");
+	event.montrer(".ok");
+	event.select(".ok").addEventListener("click", ()=>{
+		return true;
+	})
+	event.select(".annuler").addEventListener("click", ()=>{
+		return false;
+	})
+}
+event.prompt=(str, tt)=>{
+	event.select(".absolute").hidden=false;
+	event.select(".title").innerHTML=tt;
+	event.select(".paragraph").innerHTML=str;
+	event.montrer(".letter");
+	event.montrer(".annuler");
+	event.montrer(".ok");
+	event.select(".ok").addEventListener("click", ()=>{
+		return event.select(".letter").value;
+	})
+	event.select(".annuler").addEventListener("click", ()=>{
+		return null;
+	})
+}
+
 // Créer le tableau de réponses
 var tableauReponses = [];
 for (var i = 0; i < motSecret.length; i++) {
@@ -120,20 +170,20 @@ var nombreLettresManquantes = motSecret.length;
 // La boucle du jeu
 while (nombreLettresManquantes > 0) {
 	// Afficher la progression du joueur
-	alert(tableauReponses.join(" "));
+	event.alert(tableauReponses.join(" "), "Tableau :");
 	// Récupérer un essai du joueur
-	var reponse = prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.");
+	var reponse = event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
 	if (reponse !== null) {
 		reponse=reponse.toLowerCase(); // Transcription en minuscule
 	}
 	if (reponse === null) {
 		// Quitter la boucle du jeu
-		if (confirm("Quitter ?")) {
+		if (event.confirm("Quitter ?", "Action requise 🤔 :")) {
 			win=NaN;
 			break;
 		}
 	} else if (reponse.length !== 1) {
-		alert("Tu ne dois saisir qu'une seule lettre.");
+		event.alert("Tu ne dois saisir qu'une seule lettre.", "Oups...");
 	} else {
 		// Mettre à jour l'état de la partie
 		if (!alphabet[reponse]) {
@@ -151,7 +201,7 @@ while (nombreLettresManquantes > 0) {
 			}
 			alphabet[reponse]=true;
 		} else {
-			alert("La lettre a déjà été mentionnée.")
+			event.alert("La lettre a déjà été mentionnée.", "Oups...");
 		}
 	}
 
@@ -164,10 +214,12 @@ while (nombreLettresManquantes > 0) {
 
 if (win == true) {
 	// Afficher le mot secret et féliciter le joueur gagnant
-	alert(tableauReponses.join(" "));
-	alert("Félicitations ! Le mot secret est bien " + motSecret+" !");
+	event.alert(tableauReponses.join(" "), "Tableau :");
+	event.alert("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
 } else if (win == false){
 	// Lui afficher le message "Perdu"
-	alert(tableauReponses.join(" "));
-	alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...");
+	event.alert(tableauReponses.join(" "), "Tableau :");
+	event.alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
 }
+
+// Fin du fichier.
