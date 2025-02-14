@@ -1,3 +1,19 @@
+var okClicked=false;
+var annulerClicked=false;
+
+event.select(".ok").addEventListener("mousedown", ()=>{
+	okClicked=true;
+})
+event.select(".ok").addEventListener("mouseup", ()=>{
+	okClicked=false;
+})
+event.select(".annuler").addEventListener("mousedown", ()=>{
+	annulerClicked=true;
+})
+event.select(".annuler").addEventListener("mouseup", ()=>{
+	annulerClicked=false;
+})
+
 // Créer un tableau de mots
 var mots = [
 	"javascript",
@@ -186,21 +202,6 @@ for (var i = 0; i < motSecret.length; i++) {
 
 var win=true;
 var nombreLettresManquantes = motSecret.length;
-var okClicked=false;
-var annulerClicked=false;
-
-event.select(".ok").addEventListener("mousedown", ()=>{
-	okClicked=true;
-})
-event.select(".ok").addEventListener("mouseup", ()=>{
-	okClicked=false;
-})
-event.select(".annuler").addEventListener("mousedown", ()=>{
-	annulerClicked=true;
-})
-event.select(".annuler").addEventListener("mouseup", ()=>{
-	annulerClicked=false;
-})
 
 /**/// La boucle du jeu
 /**/ while (nombreLettresManquantes > 0) {
