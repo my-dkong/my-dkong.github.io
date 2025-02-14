@@ -1,6 +1,11 @@
+// @bugfix arrêt de la boucle infinie while //
+
+var event=new Object();
 var okClicked=false;
 var annulerClicked=false;
-
+event.select=(str)=>{
+	return document.querySelector(str);
+}
 event.select(".ok").addEventListener("click", ()=>{
 	okClicked=true;
 })
@@ -131,10 +136,6 @@ var membres=[
 	}
 ]
 
-var event=new Object();
-event.select=(str)=>{
-	return document.querySelector(str);
-}
 event.montrer=(elem)=>{
 	event.select(elem).hidden=false;
 }
