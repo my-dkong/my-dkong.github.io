@@ -10,6 +10,14 @@ var mots = [
 	"intergouvernementalisationnelement"
 ]
 
+var delay=(milliseconds)=>{
+	const date = Date.now();
+	var currentDate;
+	do{
+		currentDate = Date.now();
+	}while(currentDate - date < milliseconds);
+}
+
 // Choisir un mot secret au hasard
 var motSecret = mots[Math.floor(Math.random() * mots.length)];
 var essais=6;
@@ -124,9 +132,12 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	event.select(".ok").addEventListener("click", ()=>{
-		return;
-	})
+	while(true){
+		if(okClicked){
+			event.select(".absolute").hidden="";
+			return undefined;
+		}
+	}
 }
 event.confirm=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -135,12 +146,17 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	event.select(".ok").addEventListener("click", ()=>{
-		return true;
-	})
-	event.select(".annuler").addEventListener("click", ()=>{
-		return false;
-	})
+	while(true){
+		if(okClicked){
+			event.select(".absolute").hidden="";
+			return true;
+		}
+		
+		if(annulerClicked){
+			event.select(".absolute").hidden="";
+			return false;
+		}
+	}
 }
 event.prompt=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -149,12 +165,17 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	event.select(".ok").addEventListener("click", ()=>{
-		return event.select(".letter").value;
-	})
-	event.select(".annuler").addEventListener("click", ()=>{
-		return null;
-	})
+	while(true){
+		if(okClicked){
+			event.select(".absolute").hidden="";
+			return event.select(".letter").value;
+		}
+		
+		if(annulerClicked){
+			event.select(".absolute").hidden="";
+			return null;
+		}
+	}
 }
 
 // Créer le tableau de réponses
@@ -164,62 +185,76 @@ for (var i = 0; i < motSecret.length; i++) {
 }
 
 var win=true;
-
 var nombreLettresManquantes = motSecret.length;
+var okClicked=false;
+var annulerClicked=false;
 
-// La boucle du jeu
-while (nombreLettresManquantes > 0) {
-	// Afficher la progression du joueur
-	event.alert(tableauReponses.join(" "), "Tableau :");
-	// Récupérer un essai du joueur
-	var reponse = event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
-	if (reponse !== null) {
-		reponse=reponse.toLowerCase(); // Transcription en minuscule
-	}
-	if (reponse === null) {
-		// Quitter la boucle du jeu
-		if (event.confirm("Quitter ?", "Action requise 🤔 :")) {
-			win=NaN;
-			break;
-		}
-	} else if (reponse.length !== 1) {
-		event.alert("Tu ne dois saisir qu'une seule lettre.", "Oups...");
-	} else {
-		// Mettre à jour l'état de la partie
-		if (!alphabet[reponse]) {
-			var s=true;
-			for (var j = 0; j < motSecret.length; j++) {
-				if (motSecret[j] === reponse) {
-					tableauReponses[j] = reponse;
-					nombreLettresManquantes--;
-					s=false;
-				}
-			}
-			if (s=true) {
-				essais--;
-				membres[5-essais-1]();
-			}
-			alphabet[reponse]=true;
-		} else {
-			event.alert("La lettre a déjà été mentionnée.", "Oups...");
-		}
-	}
+event.select(".ok").addEventListener("mousedown", ()=>{
+	okClicked=true;
+})
+event.select(".ok").addEventListener("mouseup", ()=>{
+	okClicked=false;
+})
+event.select(".annuler").addEventListener("mousedown", ()=>{
+	annulerClicked=true;
+})
+event.select(".annuler").addEventListener("mouseup", ()=>{
+	annulerClicked=false;
+})
 
-	if (!essais>0) {
-		win=false;
-		break;
-	}
-	// Fin de la boucle de jeu
-}
-
-if (win == true) {
-	// Afficher le mot secret et féliciter le joueur gagnant
-	event.alert(tableauReponses.join(" "), "Tableau :");
-	event.alert("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
-} else if (win == false){
-	// Lui afficher le message "Perdu"
-	event.alert(tableauReponses.join(" "), "Tableau :");
-	event.alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
-}
-
-// Fin du fichier.
+/**/// La boucle du jeu
+/**/ while (nombreLettresManquantes > 0) {
+/**/ 	// Afficher la progression du joueur
+/**/ 	event.alert(tableauReponses.join(" "), "Tableau :");
+/**/ 	// Récupérer un essai du joueur
+/**/ 	var reponse = event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
+/**/ 	if (reponse !== null) {
+/**/ 		reponse=reponse.toLowerCase(); // Transcription en minuscule
+/**/ 	}
+/**/   	if (reponse === null) {
+/**/		// Quitter la boucle du jeu
+/**/		if (event.confirm("Quitter ?", "Action requise 🤔 :")) {
+/**/			win=NaN;
+/**/			break;
+/**/		}
+/**/	} else if (reponse.length !== 1) {
+/**/		event.alert("Tu ne dois saisir qu'une seule lettre.", "Oups...");
+/**/	} else {
+/**/		// Mettre à jour l'état de la partie
+/**/		if (!alphabet[reponse]) {
+/**/			var s=true;
+/**/			for (var j = 0; j < motSecret.length; j++) {
+/**/				if (motSecret[j] === reponse) {
+/**/					tableauReponses[j] = reponse;
+/**/					nombreLettresManquantes--;
+/**/					s=false;
+/**/				}
+/**/			}
+/**/			if (s=true) {
+/**/				essais--;
+/**/				membres[5-essais-1]();
+/**/			}
+/**/			alphabet[reponse]=true;
+/**/		} else {
+/**/			event.alert("La lettre a déjà été mentionnée.", "Oups...");
+/**/		}
+/**/	}
+/**/
+/**/	if (!essais>0) {
+/**/		win=false;
+/**/		break;
+/**/	}
+/**/	// Fin de la boucle de jeu
+/**/}
+/**/
+/**/if (win == true) {
+/**/	// Afficher le mot secret et féliciter le joueur gagnant
+/**/	event.alert(tableauReponses.join(" "), "Tableau :");
+/**/	event.alert("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
+/**/} else if (win == false){
+/**/	// Lui afficher le message "Perdu"
+/**/	event.alert(tableauReponses.join(" "), "Tableau :");
+/**/	event.alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
+/**/}
+/**/
+/**/// Fin du fichier.
