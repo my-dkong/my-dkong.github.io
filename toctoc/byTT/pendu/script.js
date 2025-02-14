@@ -149,13 +149,13 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	delay(500);
+	setTimeout(()=>{
 	while(true){
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			return undefined;
 		}
-	}
+	}}, 500)
 }
 event.confirm=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -164,7 +164,7 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	delay(500);
+	setTimeout(()=>{
 	while(true){
 		if(okClicked){
 			event.select(".absolute").hidden="";
@@ -175,7 +175,7 @@ event.confirm=(str, tt)=>{
 			event.select(".absolute").hidden="";
 			return false;
 		}
-	}
+	}}, 500)
 }
 event.prompt=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -184,7 +184,7 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	delay(500);
+	setTimeout(()=>{
 	while(true){
 		if(okClicked){
 			event.select(".absolute").hidden="";
@@ -195,7 +195,7 @@ event.prompt=(str, tt)=>{
 			event.select(".absolute").hidden="";
 			return null;
 		}
-	}
+	}}, 500)
 }
 
 // Créer le tableau de réponses
