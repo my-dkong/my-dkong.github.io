@@ -149,13 +149,12 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	( await ()=>{
-	while(true){
+	return new Promise((undefined, false) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			return undefined;
 		}
-	}})
+	})
 }
 event.confirm=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -164,8 +163,7 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	( await ()=>{
-	while(true){
+	return new Promise((true, false) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			return true;
@@ -175,7 +173,7 @@ event.confirm=(str, tt)=>{
 			event.select(".absolute").hidden="";
 			return false;
 		}
-	}})
+	})
 }
 event.prompt=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -184,8 +182,7 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	( await ()=>{
-	while(true){
+	return new Promise((*event;select(".letter").value, null) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			return event.select(".letter").value;
@@ -195,7 +192,7 @@ event.prompt=(str, tt)=>{
 			event.select(".absolute").hidden="";
 			return null;
 		}
-	}})
+	})
 }
 
 // Créer le tableau de réponses
