@@ -153,12 +153,20 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	return new Promise((r, s) => {
+	const ok=new Promise((resolve, reject)=>{
 		if(okClicked){
-			event.select(".absolute").hidden="";
-			r(undefined);
+			resolve(undefined);
 		}
-	})
+	});
+	while(true){
+		ok
+		.then(()=>{
+			return;
+		})
+		.catch(()=>{
+			return;
+		})
+	}
 }
 event.confirm=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -167,17 +175,23 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	return new Promise((r, s) => {
+	const button=new Promise((resolve, reject)=>{
 		if(okClicked){
-			event.select(".absolute").hidden="";
-			r(true);
+			resolve(true);
+		}else if(annulerClicked){
+			resolve(false);
 		}
-		
-		if(annulerClicked){
-			event.select(".absolute").hidden="";
-			r(false);
-		}
-	})
+	});
+	while(true){
+		button
+		.then((vr)=>{
+			return vr;
+		})
+		.catch((e)=>{
+			console.error("Erreur : "+e);
+			return;
+		})
+	}
 }
 event.prompt=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -186,17 +200,23 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	return new Promise((r, s) => {
+	const ok=new Promise((resolve, reject)=>{
 		if(okClicked){
-			event.select(".absolute").hidden="";
-			r(event.select(".letter").value);
+			resolve(event.select(".letter").value);
+		}else if(AnnulerClicked){
+			resolve(null);
 		}
-		
-		if(annulerClicked){
-			event.select(".absolute").hidden="";
-			r(null);
-		}
-	})
+	});
+	while(true){
+		ok
+		.then((vr)=>{
+			return vr;
+		})
+		.catch((e)=>{
+			console.error("Erreur : "+e);
+			return;
+		})
+	}
 }
 
 // Créer le tableau de réponses
