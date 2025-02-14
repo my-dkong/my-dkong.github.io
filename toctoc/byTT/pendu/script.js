@@ -3,6 +3,7 @@
 var r=(rt)=>{
 	return rt;
 }
+var s=r;
 var event=new Object();
 var okClicked=false;
 var annulerClicked=false;
@@ -152,7 +153,7 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	return new Promise((r, r) => {
+	return new Promise((r, s) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			r(undefined);
@@ -166,7 +167,7 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	return new Promise((r, r) => {
+	return new Promise((r, s) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			r(true);
@@ -185,7 +186,7 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	return new Promise((r, r) => {
+	return new Promise((r, s) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			r(event.select(".letter").value);
