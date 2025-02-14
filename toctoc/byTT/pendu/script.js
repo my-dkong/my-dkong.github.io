@@ -1,5 +1,8 @@
 // @bugfix arrêt de la boucle infinie while //
 
+var r=(rt)=>{
+	return rt;
+}
 var event=new Object();
 var okClicked=false;
 var annulerClicked=false;
@@ -149,10 +152,10 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	return new Promise((undefined, false) => {
+	return new Promise((r, r) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
-			return undefined;
+			r(undefined);
 		}
 	})
 }
@@ -163,15 +166,15 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	return new Promise((true, false) => {
+	return new Promise((r, r) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
-			return true;
+			r(true);
 		}
 		
 		if(annulerClicked){
 			event.select(".absolute").hidden="";
-			return false;
+			r(false);
 		}
 	})
 }
@@ -182,15 +185,15 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	return new Promise((*event;select(".letter").value, null) => {
+	return new Promise((r, r) => {
 		if(okClicked){
 			event.select(".absolute").hidden="";
-			return event.select(".letter").value;
+			r(event.select(".letter").value);
 		}
 		
 		if(annulerClicked){
 			event.select(".absolute").hidden="";
-			return null;
+			r(null);
 		}
 	})
 }
