@@ -1,13 +1,13 @@
 var okClicked=false;
 var annulerClicked=false;
 
-event.select(".ok").addEventListener("mousedown", ()=>{
+event.select(".ok").addEventListener("click", ()=>{
 	okClicked=true;
 })
 event.select(".ok").addEventListener("mouseup", ()=>{
 	okClicked=false;
 })
-event.select(".annuler").addEventListener("mousedown", ()=>{
+event.select(".annuler").addEventListener("click", ()=>{
 	annulerClicked=true;
 })
 event.select(".annuler").addEventListener("mouseup", ()=>{
