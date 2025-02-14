@@ -149,7 +149,7 @@ event.alert=(str, tt)=>{
 	event.cacher(".letter");
 	event.cacher(".annuler");
 	event.montrer(".ok");
-	( async ()=>{
+	( await ()=>{
 	while(true){
 		if(okClicked){
 			event.select(".absolute").hidden="";
@@ -164,7 +164,7 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	( async ()=>{
+	( await ()=>{
 	while(true){
 		if(okClicked){
 			event.select(".absolute").hidden="";
@@ -184,7 +184,7 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	( async ()=>{
+	( await ()=>{
 	while(true){
 		if(okClicked){
 			event.select(".absolute").hidden="";
