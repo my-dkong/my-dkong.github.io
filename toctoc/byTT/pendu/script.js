@@ -157,7 +157,6 @@ event.alert=(str, tt)=>{
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			r(undefined);
-			this.resolve();
 		}
 	})
 }
@@ -172,13 +171,11 @@ event.confirm=(str, tt)=>{
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			r(true);
-			this.resolve();
 		}
 		
 		if(annulerClicked){
 			event.select(".absolute").hidden="";
 			r(false);
-			this.resolve();
 		}
 	})
 }
@@ -193,13 +190,11 @@ event.prompt=(str, tt)=>{
 		if(okClicked){
 			event.select(".absolute").hidden="";
 			r(event.select(".letter").value);
-			this.resolve();
 		}
 		
 		if(annulerClicked){
 			event.select(".absolute").hidden="";
 			r(null);
-			this.resolve();
 		}
 	})
 }
