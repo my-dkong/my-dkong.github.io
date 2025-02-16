@@ -200,16 +200,14 @@ event.select(".ok").addEventListener("click", ()=>{
 	}else if(event.circuit===1){
 		reponse=event.select(".letter").value;
 		event.cacher(".absolute");
-		if (reponse !== null) {
- 			reponse=reponse.toLowerCase(); // Transcription en minuscule
- 		}
+		reponse=reponse.toLowerCase(); // Transcription en minuscule
 		
-  	 	if (reponse === null) {
+  	 	/*if (reponse === null) {
 			// Quitter la boucle du jeu
 				event.circuit=2;
 				event.confirm("Quitter ?", "Action requise 🤔 :";
-			} else if (reponse.length !== 1) {
-				event.confirm=3;
+			} else */if (reponse.length !== 1) {
+				event.circuit=0;
 				event.alert("Tu ne dois saisir qu'une seule lettre.", "Oups...");
 			} else {
 				// Mettre à jour l'état de la partie
@@ -228,15 +226,17 @@ event.select(".ok").addEventListener("click", ()=>{
 					}
 					alphabet[reponse]=true;
 				} else {
-					event.circuit=4;
+					event.circuit=0;
 					event.alert("La lettre a déjà été mentionnée.", "Oups...");
 				}
 		}
 	}else if(event.circuit===2){
 		event.cacher(".absolute");
-		win=NaN;                                                                                 // @note Prendre en compte la réponse (...=sortie)
+		win=NaN;
 		event.circuit=5;
 		verif();
+	}else if(event.circuit===3){
+		                                                                                         // @note afficher le tableau
 	}
 })
 
