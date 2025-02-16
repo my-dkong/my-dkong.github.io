@@ -1,4 +1,4 @@
-// @bugfix arrêt de la boucle infinie while //
+// @bugfix arrêt de la boucle infinie while // babiboucheee
 
 var r=(rt)=>{
 	return rt;
