@@ -186,7 +186,7 @@ event.select(".ok").addEventListener("click", ()=>{
 	if(event.circuit===0){
 		event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
-		event.circuit++;
+		event.circuit=1;
 	}else if(event.circuit===1){
 		reponse=event.select(".letter").value;
 		event.cacher(".absolute");
@@ -197,7 +197,7 @@ event.select(".ok").addEventListener("click", ()=>{
 				event.circuit=2;
 				event.confirm("Quitter ?", "Action requise 🤔 :";
 			} else */if (reponse.length !== 1) {
-				event.circuit=0;
+				event.circuit=3; // Tableau
 				event.alert("Tu ne dois saisir qu'une seule lettre.", "Oups...");
 			} else {
 				// Mettre à jour l'état de la partie
@@ -215,8 +215,10 @@ event.select(".ok").addEventListener("click", ()=>{
 						membres[5-essais-1]();
 					}
 					alphabet[reponse]=true;
+					event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
+					event.circuit=0;                                     // /
 				} else {
-					event.circuit=0;
+					event.circuit=3;
 					event.alert("La lettre a déjà été mentionnée.", "Oups...");
 				}
 		}
@@ -226,7 +228,15 @@ event.select(".ok").addEventListener("click", ()=>{
 		event.circuit=5;
 		verif();
 	}else if(event.circuit===3){
-		                                                                                         // @note afficher le tableau
+		event.alert(tableauReponses.join(" "), "Tableau :");
+		event.circuit=0;
+	}
+})
+
+event.select(".annuler").addEventListener("click", ()=>{
+	if(event.circuit===1){
+		event.circuit=2;
+		event.confirm("Quitter ?", "Action requise 🤔 :";                                               //// @note j'en suis ici ////
 	}
 })
 
