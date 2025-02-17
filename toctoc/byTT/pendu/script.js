@@ -170,6 +170,14 @@ event.prompt=(str, tt)=>{
 	event.montrer(".annuler");
 	event.montrer(".ok");
 }
+event.inverse=new Object();
+event.inverse["6"]=0;
+event.inverse["5"]=1;
+event.inverse["4"]=2;
+event.inverse["3"]=3;
+event.inverse["2"]=4;
+event.inverse["1"]=5;
+event.inverse["0"]=6;
 
 // Créer le tableau de réponses
 var tableauReponses = [];
@@ -211,8 +219,7 @@ event.select(".ok").addEventListener("click", ()=>{
 						}
 					}
 					if (s===true) {
-						essais--;
-						membres[essais-6]();
+						membres[event.inverse[String(essais--)]]();
 					}
 					alphabet[reponse]=true;
 					event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
