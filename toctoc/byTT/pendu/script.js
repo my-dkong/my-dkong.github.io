@@ -144,7 +144,7 @@ event.montrer=(elem)=>{
 	event.select(elem).hidden=false;
 }
 event.cacher=(elem)=>{
-	event.select(elem).hidden="";
+	event.select(elem).hidden=true;
 }
 event.alert=(str, tt)=>{
 	event.select(".absolute").hidden=false;
