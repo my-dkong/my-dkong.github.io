@@ -222,8 +222,13 @@ event.select(".ok").addEventListener("click", ()=>{
 						membres[event.inverse[String(essais--)]]();
 					}
 					alphabet[reponse]=true;
-					event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
-					event.circuit=0;                                     // /
+					if(nombreLettresManquantes>0){
+						event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
+						event.circuit=0;                                     // /
+					}else{
+						verif()
+						event.circuit=NaN;
+					}
 				} else {
 					event.circuit=3;
 					event.alert("La lettre a déjà été mentionnée.", "Oups...");
@@ -297,7 +302,7 @@ event.select(".annuler").addEventListener("click", ()=>{
 }, 50)*/
 
 var verif=()=>{
-	clearInterval(intervalle);
+	/*clearInterval(intervalle);*/
 	if (win == true) {
 		// Afficher le mot secret et féliciter le joueur gagnant
 		event.alert(tableauReponses.join(" "), "Tableau :");
