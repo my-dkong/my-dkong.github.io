@@ -185,7 +185,7 @@ var sortie;
 event.select(".ok").addEventListener("click", ()=>{
 	if(event.circuit===0){
 		event.cacher(".absolute");
-		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
+		event.prompt("Devine une lettre, ou clique sur <pre>Annuler</pre> pour quitter la partie.", "Une lettre plize 🙏 !!!");
 		event.circuit=1;
 	}else if(event.circuit===1){
 		reponse=event.select(".letter").value;
@@ -212,7 +212,7 @@ event.select(".ok").addEventListener("click", ()=>{
 					}
 					if (s===true) {
 						essais--;
-						membres[5-essais-1]();
+						membres[essais-6]();
 					}
 					alphabet[reponse]=true;
 					event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
