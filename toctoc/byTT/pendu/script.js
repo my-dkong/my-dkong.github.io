@@ -192,6 +192,7 @@ var reponse;
 var sortie;
 
 event.select(".ok").addEventListener("click", ()=>{
+	event.select(".letter").value="";
 	if(event.circuit===0){
 		event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!", ".letter");
