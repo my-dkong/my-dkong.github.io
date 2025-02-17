@@ -161,11 +161,6 @@ event.confirm=(str, tt)=>{
 	event.cacher(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	event.circuit={
-		parent: "event.confirm",
-		string: str,
-		title: tt
-	};
 }
 event.prompt=(str, tt)=>{
 	event.select(".absolute").hidden=false;
@@ -174,11 +169,6 @@ event.prompt=(str, tt)=>{
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
-	event.circuit={
-		parent: "event.prompt",
-		string: str,
-		title: tt
-	};
 }
 
 // Créer le tableau de réponses
