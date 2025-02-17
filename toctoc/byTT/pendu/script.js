@@ -236,7 +236,7 @@ event.select(".ok").addEventListener("click", ()=>{
 event.select(".annuler").addEventListener("click", ()=>{
 	if(event.circuit===1){
 		event.circuit=2;
-		event.confirm("Quitter ?", "Action requise 🤔 :";
+		event.confirm("Quitter ?", "Action requise 🤔 :");
 	}else if(event.circuit===2){
 		event.alert(tableauReponses.join(" "), "Tableau :");
 		event.circuit=0;
