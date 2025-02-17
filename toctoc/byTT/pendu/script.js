@@ -162,13 +162,14 @@ event.confirm=(str, tt)=>{
 	event.montrer(".annuler");
 	event.montrer(".ok");
 }
-event.prompt=(str, tt)=>{
+event.prompt=(str, tt, textElem)=>{
 	event.select(".absolute").hidden=false;
 	event.select(".title").innerHTML=tt;
 	event.select(".paragraph").innerHTML=str;
 	event.montrer(".letter");
 	event.montrer(".annuler");
 	event.montrer(".ok");
+	event.select(textElem).focus();
 }
 event.inverse=new Object();
 event.inverse["6"]=0;
@@ -193,7 +194,7 @@ var sortie;
 event.select(".ok").addEventListener("click", ()=>{
 	if(event.circuit===0){
 		event.cacher(".absolute");
-		event.prompt("Devine une lettre, ou clique sur <pre>Annuler</pre> pour quitter la partie.", "Une lettre plize 🙏 !!!");
+		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!", ".letter");
 		event.circuit=1;
 	}else if(event.circuit===1){
 		reponse=event.select(".letter").value;
@@ -243,7 +244,7 @@ event.select(".ok").addEventListener("click", ()=>{
 		event.alert(tableauReponses.join(" "), "Tableau :");
 		event.circuit=0;
 	}
-})
+});
 
 event.select(".annuler").addEventListener("click", ()=>{
 	if(event.circuit===1){
@@ -252,8 +253,16 @@ event.select(".annuler").addEventListener("click", ()=>{
 	}else if(event.circuit===2){
 		event.alert(tableauReponses.join(" "), "Tableau :");
 		event.circuit=0;
+	}else if(event.circuit===1000){
+		event.cacher(".absolute");
 	}
-})
+});
+
+event.select(".letter").addEventListener("keydown", (e)=>{
+	if(e.key==="enter"){
+		event.select(".ok").click();
+	}
+});
 
 /*// La boucle du jeu
  var intervalle=setInterval(()=>{
@@ -306,11 +315,13 @@ var verif=()=>{
 	if (win == true) {
 		// Afficher le mot secret et féliciter le joueur gagnant
 		event.alert(tableauReponses.join(" "), "Tableau :");
-		event.alert("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
+		event.confirm("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
+		event.circuit=1000;
 	} else if (win == false){
 		// Lui afficher le message "Perdu"
 		event.alert(tableauReponses.join(" "), "Tableau :");
-		event.alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
+		event.confirm("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
+		event.circuit=1000;
 	}
 }
 /**/// Fin du fichier.
