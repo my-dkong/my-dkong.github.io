@@ -236,16 +236,19 @@ event.select(".ok").addEventListener("click", ()=>{
 event.select(".annuler").addEventListener("click", ()=>{
 	if(event.circuit===1){
 		event.circuit=2;
-		event.confirm("Quitter ?", "Action requise 🤔 :";                                               //// @note j'en suis ici ////
+		event.confirm("Quitter ?", "Action requise 🤔 :";
+	}else if(event.circuit===2){
+		event.alert(tableauReponses.join(" "), "Tableau :");
+		event.circuit=0;
 	}
 })
 
-// La boucle du jeu
+/*// La boucle du jeu
  var intervalle=setInterval(()=>{
  	// Afficher la progression du joueur
- 	event.alert(tableauReponses.join(" "), "Tableau :");
+ 	*/event.alert(tableauReponses.join(" "), "Tableau :");
 	event.circuit=0;
- 	// Récupérer un essai du joueur
+ 	/*// Récupérer un essai du joueur
  	var reponse = event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
  	if (reponse !== null) {
  		reponse=reponse.toLowerCase(); // Transcription en minuscule
@@ -284,18 +287,18 @@ event.select(".annuler").addEventListener("click", ()=>{
 		verif();
 	}
 	// Fin de la boucle de jeu
-}, 50)
+}, 50)*/
 
 var verif=()=>{
 	clearInterval(intervalle);
 	if (win == true) {
-/**/	// Afficher le mot secret et féliciter le joueur gagnant
-/**/	event.alert(tableauReponses.join(" "), "Tableau :");
-/**/	event.alert("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
-/**/} else if (win == false){
-/**/	// Lui afficher le message "Perdu"
-/**/	event.alert(tableauReponses.join(" "), "Tableau :");
-/**/	event.alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
-/**/}
-/**/}
+		// Afficher le mot secret et féliciter le joueur gagnant
+		event.alert(tableauReponses.join(" "), "Tableau :");
+		event.alert("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
+	} else if (win == false){
+		// Lui afficher le message "Perdu"
+		event.alert(tableauReponses.join(" "), "Tableau :");
+		event.alert("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
+	}
+}
 /**/// Fin du fichier.
