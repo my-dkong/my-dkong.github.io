@@ -196,7 +196,7 @@ event.select(".ok").addEventListener("click", ()=>{
 	event.select(".letter").value="";
 	if(event.circuit===0){
 		event.cacher(".absolute");
-		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!", ".letter");
+		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter");
 		event.circuit=1;
 	}else if(event.circuit===1){
 		reponse=reponse1;
@@ -261,9 +261,7 @@ event.select(".annuler").addEventListener("click", ()=>{
 });
 
 event.select("body").addEventListener("keydown", (e)=>{
-	if(e.key==="enter"){
-		event.select(".ok").click();
-	}
+	if(e.key==="enter") event.select(".ok").click();
 });
 
 /*// La boucle du jeu
