@@ -245,6 +245,8 @@ event.select(".ok").addEventListener("click", ()=>{
 	}else if(event.circuit===3){
 		event.alert(tableauReponses.join(" "), "Tableau :");
 		event.circuit=0;
+	}else if(event.circuit===1000){
+		window.location.reload();
 	}
 });
 
