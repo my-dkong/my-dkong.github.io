@@ -260,7 +260,7 @@ event.select(".annuler").addEventListener("click", ()=>{
 	}
 });
 
-event.select(".letter").addEventListener("keydown", (e)=>{
+event.select("body").addEventListener("keydown", (e)=>{
 	if(e.key==="enter"){
 		event.select(".ok").click();
 	}
