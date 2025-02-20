@@ -206,11 +206,11 @@ event.select(".ok").addEventListener("click", ()=>{
 			// Quitter la boucle du jeu
 				event.circuit=2;
 				event.confirm("Quitter ?", "Action requise 🤔 :";
-			} else */if (reponse.length !== 1) {
+			} else if (reponse!=="") {
 				event.circuit=3; // Tableau
 				event.alert("Tu ne dois saisir qu'une seule lettre.", "Oups...");
 			} else {
-				// Mettre à jour l'état de la partie
+				*/// Mettre à jour l'état de la partie
 				if (!alphabet[reponse]) {
 					var s=true;
 					for (var j = 0; j < motSecret.length; j++) {
@@ -235,7 +235,7 @@ event.select(".ok").addEventListener("click", ()=>{
 					event.circuit=3;
 					event.alert("La lettre a déjà été mentionnée.", "Oups...");
 				}
-		}
+		//}
 	}else if(event.circuit===2){
 		event.cacher(".absolute");
 		win=NaN;
