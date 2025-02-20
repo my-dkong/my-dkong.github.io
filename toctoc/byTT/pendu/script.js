@@ -192,13 +192,14 @@ var reponse;
 var sortie;
 
 event.select(".ok").addEventListener("click", ()=>{
+	const reponse1=event.select(".letter").value;
 	event.select(".letter").value="";
 	if(event.circuit===0){
 		event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!", ".letter");
 		event.circuit=1;
 	}else if(event.circuit===1){
-		reponse=event.select(".letter").value;
+		reponse=reponse1;
 		event.cacher(".absolute");
 		reponse=reponse.toLowerCase(); // Transcription en minuscule
 		
