@@ -1,1 +1,13 @@
-
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #000;
+  position: relative;
+  width: 500px;
+  height: 75%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
