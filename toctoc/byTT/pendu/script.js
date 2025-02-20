@@ -260,8 +260,8 @@ event.select(".annuler").addEventListener("click", ()=>{
 	}
 });
 
-event.select("body").addEventListener("keydown", (e)=>{
-	if(e.key==="enter") event.select(".ok").click();
+event.select(".letter").addEventListener("keydown", (e)=>{
+	if(e.keyCode===13) event.select(".ok").click();
 });
 
 /*// La boucle du jeu
