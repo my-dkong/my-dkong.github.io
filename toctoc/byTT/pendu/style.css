@@ -23,8 +23,18 @@
   }
 }
 
-.body{
-  display: inline;
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 30px;
+  height: 30px;
+  width: 100%;
+  cursor: pointer;
+  background: #ffbb00;
+  color: #000000;
+  transition: 0.2s ease;
 }
 
 body{
