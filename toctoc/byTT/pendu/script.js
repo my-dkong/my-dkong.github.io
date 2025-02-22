@@ -201,7 +201,7 @@ event.select(".ok").addEventListener("click", ()=>{
 		event.circuit=1;
 	}else if(event.circuit===1){
 		reponse=reponse1;
-		event.cacher(".absolute");
+		//event.cacher(".absolute");
 		reponse=reponse.toLowerCase(); // Transcription en minuscule
 		
   	 	/*if (reponse === null) {
