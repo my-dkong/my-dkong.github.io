@@ -230,7 +230,9 @@ event.select(".ok").addEventListener("click", ()=>{
 						event.circuit=0;                                     // /
 					}else{
 						verif()
-						event.circuit=NaN;
+					}
+					if(essais<1){
+						verif()
 					}
 				} else {
 					event.circuit=3;
