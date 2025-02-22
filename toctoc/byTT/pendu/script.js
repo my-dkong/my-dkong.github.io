@@ -229,10 +229,14 @@ event.select(".ok").addEventListener("click", ()=>{
 						event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
 						event.circuit=0;                                     // /
 					}else{
-						verif()
+						win=true;
+						event.alert(tableauReponses.join(" "), "Tableau :");
+						event.circuit=999;
 					}
 					if(essais<1){
-						verif()
+						win=false;
+						event.alert(tableauReponses.join(" "), "Tableau :");
+						event.circuit=999;
 					}
 				} else {
 					event.circuit=3;
@@ -241,14 +245,13 @@ event.select(".ok").addEventListener("click", ()=>{
 		//}
 	}else if(event.circuit===2){
 		event.cacher(".absolute");
-		win=NaN;
-		event.circuit=5;
-		verif();
 	}else if(event.circuit===3){
 		event.alert(tableauReponses.join(" "), "Tableau :");
 		event.circuit=0;
 	}else if(event.circuit===1000){
 		window.location.reload();
+	}else if(event.circuit===999){
+		verif();
 	}
 });
 
@@ -261,6 +264,8 @@ event.select(".annuler").addEventListener("click", ()=>{
 		event.circuit=0;
 	}else if(event.circuit===1000){
 		event.cacher(".absolute");
+	}else if(event.circuit===999){
+		verif();
 	}
 });
 
@@ -319,11 +324,13 @@ var verif=()=>{
 	if (win == true) {
 		// Afficher le mot secret et féliciter le joueur gagnant
 		event.alert(tableauReponses.join(" "), "Tableau :");
+		event.circuit=999;
 		event.confirm("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
 		event.circuit=1000;
 	} else if (win == false){
 		// Lui afficher le message "Perdu"
 		event.alert(tableauReponses.join(" "), "Tableau :");
+		event.circuit=999;
 		event.confirm("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
 		event.circuit=1000;
 	}
