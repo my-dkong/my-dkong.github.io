@@ -322,15 +322,11 @@ event.select(".letter").addEventListener("keydown", (e)=>{
 var verif=()=>{
 	/*clearInterval(intervalle);*/
 	if (win == true) {
-		// Afficher le mot secret et féliciter le joueur gagnant
-		event.alert(tableauReponses.join(" "), "Tableau :");
-		event.circuit=999;
+		// Féliciter le joueur gagnant
 		event.confirm("Félicitations ! Le mot secret est bien " + motSecret+" !", "Bravo 🥳 ! On reccomence 🥺 ?");
 		event.circuit=1000;
 	} else if (win == false){
 		// Lui afficher le message "Perdu"
-		event.alert(tableauReponses.join(" "), "Tableau :");
-		event.circuit=999;
 		event.confirm("Oups ! Tu as utilisé tous tes essais, le mot était " + motSecret+"...", "Oups... 😭 On reccomence 🥺 ?");
 		event.circuit=1000;
 	}
