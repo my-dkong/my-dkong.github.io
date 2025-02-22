@@ -151,7 +151,7 @@ event.alert=(str, tt)=>{
 	event.select(".title").innerHTML=tt;
 	event.select(".paragraph").innerHTML=str;
 	event.cacher(".letter");
-	event.cacher(".annuler");
+	event.select(".annuler").style.display="none"; // Hide event.select(".annuler")
 	event.montrer(".ok");
 }
 event.confirm=(str, tt)=>{
@@ -159,7 +159,7 @@ event.confirm=(str, tt)=>{
 	event.select(".title").innerHTML=tt;
 	event.select(".paragraph").innerHTML=str;
 	event.cacher(".letter");
-	event.montrer(".annuler");
+	event.select(".annuler").style.display="block"; // Show event.select(".annuler")
 	event.montrer(".ok");
 }
 event.prompt=(str, tt, textElem)=>{
@@ -167,7 +167,7 @@ event.prompt=(str, tt, textElem)=>{
 	event.select(".title").innerHTML=tt;
 	event.select(".paragraph").innerHTML=str;
 	event.montrer(".letter");
-	event.montrer(".annuler");
+	event.select(".annuler").style.display="block"; // Show event.select(".annuler")
 	event.montrer(".ok");
 	event.select(textElem).focus();
 }
@@ -194,6 +194,7 @@ var sortie;
 event.select(".ok").addEventListener("click", ()=>{
 	const reponse1=event.select(".letter").value;
 	event.select(".letter").value="";
+	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
 	if(event.circuit===0){
 		event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter");
@@ -225,21 +226,16 @@ event.select(".ok").addEventListener("click", ()=>{
 						membres[event.inverse[String(essais--)]]();
 					}
 					alphabet[reponse]=true;
-					if(nombreLettresManquantes>0){
-						event.alert(tableauReponses.join(" "), "Tableau :"); // \__Tableau_  @note
-						event.circuit=0;                                     // /
-					}else{
+					if(nombreLettresManquantes<1){
 						win=true;
-						event.alert(tableauReponses.join(" "), "Tableau :");
-						event.circuit=999;
+						verif();
 					}
 					if(essais<1){
 						win=false;
-						event.alert(tableauReponses.join(" "), "Tableau :");
-						event.circuit=999;
+						verif();
 					}
 				} else {
-					event.circuit=3;
+					event.circuit=0;
 					event.alert("La lettre a déjà été mentionnée.", "Oups...");
 				}
 		//}
