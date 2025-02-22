@@ -12,6 +12,12 @@
   transition: 0.2s ease;
 }
 
+.flexbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 768px){
   .root{
     border-radius: 0;
