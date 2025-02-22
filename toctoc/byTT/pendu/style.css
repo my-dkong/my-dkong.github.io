@@ -18,6 +18,10 @@
   justify-content: center;
 }
 
+.flexbox div{
+  gap: 20px;
+}
+
 @media (max-width: 768px){
   .root{
     border-radius: 0;
