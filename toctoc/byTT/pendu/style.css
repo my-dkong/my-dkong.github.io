@@ -12,7 +12,7 @@
   transition: 0.2s ease;
 }
 
-@media (min-width: 320px){
+@media (max-width: 768px){
   .root{
     border-radius: 0;
     padding: 0;
