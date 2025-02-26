@@ -196,7 +196,7 @@ event.select(".ok").addEventListener("click", ()=>{
 	event.select(".letter").value="";
 	if(event.circuit===0){
 		event.cacher(".absolute");
-		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter");
+		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter"); ///  L.319-321
 		event.circuit=1;
 	}else if(event.circuit===1){
 		reponse=reponse1;
@@ -273,8 +273,8 @@ event.select(".letter").addEventListener("keydown", (e)=>{
 /*// La boucle du jeu
  var intervalle=setInterval(()=>{
  	// Afficher la progression du joueur
- 	*/event.alert(tableauReponses.join(" "), "Tableau :");
-	event.circuit=0;
+ 	*///event.alert(tableauReponses.join(" "), "Tableau :");
+	//event.circuit=0;
  	/*// Récupérer un essai du joueur
  	var reponse = event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Une lettre plize 🙏 !!!");
  	if (reponse !== null) {
@@ -315,6 +315,11 @@ event.select(".letter").addEventListener("keydown", (e)=>{
 	}
 	// Fin de la boucle de jeu
 }, 50)*/
+
+event.cacher(".absolute");
+event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter");
+event.circuit=1;
+
 
 var verif=()=>{
 	/*clearInterval(intervalle);*/
