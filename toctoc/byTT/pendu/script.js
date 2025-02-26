@@ -194,7 +194,6 @@ var sortie;
 event.select(".ok").addEventListener("click", ()=>{
 	const reponse1=event.select(".letter").value;
 	event.select(".letter").value="";
-	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
 	if(event.circuit===0){
 		event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter");
@@ -249,6 +248,7 @@ event.select(".ok").addEventListener("click", ()=>{
 	}else if(event.circuit===999){
 		verif();
 	}
+	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
 });
 
 event.select(".annuler").addEventListener("click", ()=>{
@@ -263,6 +263,7 @@ event.select(".annuler").addEventListener("click", ()=>{
 	}else if(event.circuit===999){
 		verif();
 	}
+	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
 });
 
 event.select(".letter").addEventListener("keydown", (e)=>{
