@@ -1,7 +1,7 @@
 // @bugfix arrêt de la boucle infinie while //
 
 var r=(rt)=>{
-	return rt;
+	return rt//
 }
 var s=r;
 var event=new Object();
