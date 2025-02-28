@@ -192,7 +192,7 @@ var reponse;
 var sortie;
 
 event.select(".ok").addEventListener("click", ()=>{
-	const reponse1=event.select(".letter").value;
+	const reponse1=event.select(".letter").innerText;
 	event.select(".letter").value="";
 	if(event.circuit===0){
 		//event.cacher(".absolute");
