@@ -195,7 +195,7 @@ event.select(".ok").addEventListener("click", ()=>{
 	const reponse1=event.select(".letter").value;
 	event.select(".letter").value="";
 	if(event.circuit===0){
-		event.cacher(".absolute");
+		//event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter"); ///  L.319-321
 		event.circuit=1;
 	}else if(event.circuit===1){
@@ -256,8 +256,9 @@ event.select(".annuler").addEventListener("click", ()=>{
 		event.circuit=2;
 		event.confirm("Quitter ?", "Action requise 🤔 :");
 	}else if(event.circuit===2){
-		event.alert(tableauReponses.join(" "), "Tableau :");
-		event.circuit=0;
+		//event.cacher(".absolute");
+		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter"); ///  L.319-321
+		event.circuit=1;
 	}else if(event.circuit===1000){
 		event.cacher(".absolute");
 	}else if(event.circuit===999){
