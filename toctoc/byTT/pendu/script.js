@@ -191,6 +191,12 @@ var nombreLettresManquantes = motSecret.length;
 var reponse;
 var sortie;
 
+event.select(".letter").addEventListener("change", ()=>{
+	if(event.select(".letter").innerText.length>1){
+		event.select(".letter").innerText=event.select(".letter").innerText.substr(0, 1)//
+	}
+})
+
 event.select(".ok").addEventListener("click", ()=>{
 	const reponse1=event.select(".letter").value;
 	event.select(".letter").value="";
