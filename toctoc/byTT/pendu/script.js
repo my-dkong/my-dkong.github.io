@@ -192,8 +192,8 @@ var reponse;
 var sortie;
 
 event.select(".ok").addEventListener("click", ()=>{
-	const reponse1=event.select(".letter").innerText;
-	event.select(".letter").value="";
+	const reponse1=event.select(".letter").innerHTML;
+	event.select(".letter").innerHTML="";
 	if(event.circuit===0){
 		//event.cacher(".absolute");
 		event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter"); ///  L.319-321
