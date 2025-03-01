@@ -20,9 +20,9 @@
 }
 
 p[contenteditable="true"]{
-  font-size: 4rem;
-  width: 60px;
-  height: 60px;
+  font-size: 4.5rem;
+  width: 90px;
+  height: 90px;
   border: none;
   border-radius: 50%;
   outline: 2px solid gray; /* Couleur par défaut du contour */
