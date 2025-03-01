@@ -25,11 +25,6 @@ p[contenteditable="true"]{
   border-radius: 50%;
 }
 
-p[contenteditable="true"] :focus{
-  border: 4px solid #ffa600;
-  border-radius: 0;
-}
-
 .flexbox div{
   gap: 20px;
 }
