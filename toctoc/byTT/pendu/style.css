@@ -25,6 +25,14 @@ p[contenteditable="true"]{
   border-radius: 50%;
 }
 
+p[contenteditable="true"] {
+    outline: 2px solid transparent; /* Couleur par défaut du contour */
+}
+
+p[contenteditable="true"]:focus {
+    outline: 2px solid #ffa600;     /* Couleur du contour au focus */
+}
+
 .flexbox div{
   gap: 20px;
 }
