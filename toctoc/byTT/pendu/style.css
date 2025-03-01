@@ -24,7 +24,8 @@ p[contenteditable="true"]{
   height: 60px;
   border: none;
   border-radius: 50%;
-    outline: 2px solid gray; /* Couleur par défaut du contour */
+  outline: 2px solid gray; /* Couleur par défaut du contour */
+  transition: 0.2s ease;
 }
 
 p[contenteditable="true"] :focus {
