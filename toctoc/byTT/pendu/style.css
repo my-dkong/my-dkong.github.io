@@ -18,6 +18,15 @@
   justify-content: center;
 }
 
+p[contenteditable="true"]{
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+}
+
+p[contenteditable
+
 .flexbox div{
   gap: 20px;
 }
