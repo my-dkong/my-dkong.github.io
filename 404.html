@@ -28,6 +28,8 @@
     <script>
       if(window.location.href.substr(27, 6)=="toctoc"){
         window.location.href="/UJ"+window.location.href.substr(33, window.location.href.length);
+      }else if((window.location.href.substr(34, 4)=="byTT")||(window.location.href.substr(30, 4)=="byTT")){
+        window.location.href="/UJ/byUJ/"+window.location.href.substr(window.location.href.indexOf("byTT")+4, window.location.href.length)
       }else{
         document.querySelector(".ra").addEventListener("click", ()=>{
           window.location.href="/";
