@@ -1,6 +1,6 @@
 // @bugfix arrêt de la boucle infinie while //
 
-async function getFrenchWords() {
+const getFrenchWords=()=>{
   try {
     const response = await fetch("https://trouve-mot.fr/api/random/20");
     const words = await response.json();
