@@ -2,7 +2,7 @@
 var motsFetches;
 async function getFrenchWords() {
   try {
-    const response = await fetch("https://trouve-mot.fr/api/random/20");
+    const response = await fetch("https://trouve-mot.fr/api/random/3574");
     const words = await response.json();
     console.log(words); // Tableau de 20 mots
     return words;
