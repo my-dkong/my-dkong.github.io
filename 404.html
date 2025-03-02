@@ -26,9 +26,13 @@
       <button class="ra">Retour à l'accueil</button>
     </div>
     <script>
-      document.querySelector(".ra").addEventListener("click", ()=>{
-        window.location.href="/"
-      })
+      if(window.location.href.substring(27, 33)=="toctoc"){
+        window.location.href="/UJ/"
+      }else{
+        document.querySelector(".ra").addEventListener("click", ()=>{
+          window.location.href="/"
+        })
+      }
     </script>
   </div></body>
 </html>
