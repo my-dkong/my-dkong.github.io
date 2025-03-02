@@ -5,11 +5,16 @@ async function getFrenchWords() {
   try {
     const response = await fetch("https://trouve-mot.fr/api/random/3574");
     words = await response.json();
-    console.log(words); // Tableau de 20 mots
+    console.log(words); // Tableau de 3574 mots
     return words;
   } catch (error) {
     console.error("Erreur lors de la récupération des mots :", error);
   }
+}
+
+getFrenchWords();
+for(var i=0;i<2574;i++{
+	mots[i]=words[i].name;
 }
 
 var r=(rt)=>{
