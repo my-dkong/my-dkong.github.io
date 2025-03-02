@@ -1,9 +1,10 @@
 // @bugfix arrêt de la boucle infinie while //
 var motsFetches;
+var words;
 async function getFrenchWords() {
   try {
     const response = await fetch("https://trouve-mot.fr/api/random/3574");
-    const words = await response.json();
+    words = await response.json();
     console.log(words); // Tableau de 20 mots
     return words;
   } catch (error) {
