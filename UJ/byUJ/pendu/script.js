@@ -20,6 +20,7 @@ for(var i=0;i<2574;i++{
 var r=(rt)=>{
 	return rt//
 }
+
 var s=r;
 var event=new Object();
 var okClicked=false;
@@ -40,7 +41,7 @@ event.select(".annuler").addEventListener("mouseup", ()=>{
 	annulerClicked=false;
 })
 
-// Créer un tableau de mots
+/*// Créer un tableau de mots
 var mots = [
 	"javascript",
 	"singe",
@@ -50,7 +51,7 @@ var mots = [
 	"robot",
 	"jeu",
 	"intergouvernementalisationnelement"
-]
+]*/
 
 var delay=(milliseconds)=>{
 	const date = Date.now();
