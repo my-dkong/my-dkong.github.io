@@ -13,7 +13,7 @@ async function getFrenchWords() {
 }
 
 getFrenchWords();
-for(var i=0;i<2574;i++{
+for(var i=0;i<2574;i++){
 	mots[i]=words[i].name;
 }
 
