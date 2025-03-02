@@ -11,7 +11,7 @@ const getFrenchWords=()=>{
   }
 }
 
-motsFetches=getFrenchWords();
+var motsFetches=getFrenchWords();
 for(var i=0;i<20;i++){
 	console.log(motsFetches[0].name);
 }
