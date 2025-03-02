@@ -1,19 +1,19 @@
 // @bugfix arrêt de la boucle infinie while //
-
+var motsFetches
 const getFrenchWords=()=>{
   try {
-    const response = async fetch("https://trouve-mot.fr/api/random/20");
+    const response = async fetch("https://trouve-mot.fr/api/random/3574");
     const words = response.json();
+    for(var i=0;i<20;i++){
+	motsFetches[i]=words[0].name;
+	console.log(words[0].name);
+    }
+    console.log(motsFetches);
     console.log(words); // Tableau de 20 mots
     return words;
   } catch (error) {
     console.error("Erreur lors de la récupération des mots :", error);
   }
-}
-
-var motsFetches=getFrenchWords();
-for(var i=0;i<20;i++){
-	console.log(motsFetches[0].name);
 }
 
 var r=(rt)=>{
