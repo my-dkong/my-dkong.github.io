@@ -12,7 +12,7 @@ async function getFrenchWords() {
 }
 
 getFrenchWords();
-while(words[3573].name!=undefined);
+while(words[3574].name!=undefined);
 for(var i=0;i<2574;i++){
 	mots[i]=words[i].name;
 }
