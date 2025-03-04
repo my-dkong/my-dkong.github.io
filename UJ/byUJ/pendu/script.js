@@ -14301,18 +14301,20 @@ var words=[
 var event=new Object();
 event.replace=(string, catactereATrouver, caractereARemplacer)=>{
 	var rendu="";
-	for(var i;i<string.length;i++){
-		letter=string.substr(i, 1);
+	for(var j;j<string.length;j++){
+		letter=string.substr(j, 1);
 		if(letter===catactereATrouver){
 			letter=caractereARemplacer;
 		}
 		rendu+=letter; //////////////////////////////////////////// ICI
 	}
+	return letter;
 }
 
 getFrenchWords();
 for(var i=0;i<2574;i++){
 	mots[i]=words[i].name;
+	rendu=event.replace(mots[i]                                     /////////////////////// ICI2
 }
 
 var r=(rt)=>{
