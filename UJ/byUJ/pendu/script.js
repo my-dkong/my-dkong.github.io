@@ -13,7 +13,7 @@ event.replace=(string, catactereATrouver, caractereARemplacer)=>{
 	return letter;
 }
 
-getFrenchWords();
+//getFrenchWords();
 const lettresInterdites="éèêëàâîïôû";
 for(var i=0;i<3574;i++){
 	mots[i]=words[i].name;
