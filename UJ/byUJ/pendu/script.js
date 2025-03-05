@@ -79,33 +79,10 @@ var essais=6;
 var canvas=document.querySelector("canvas");
 var ctx=canvas.getContext("2d");
 
-var alphabet = {
-	a: false,
-	b: false,
-	c: false,
-	d: false,
-	e: false,
-	f: false,
-	g: false,
-	h: false,
-	i: false,
-	j: false,
-	k: false,
-	l: false,
-	m: false,
-	n: false,
-	o: false,
-	p: false,
-	q: false,
-	r: false,
-	s: false,
-	t: false,
-	u: false,
-	v: false,
-	w: false,
-	x: false,
-	y: false,
-	z: false
+const alphabetstr="abcdefghijklmnopqrstuvwxyz";
+var alphabet=new Object();
+for(var i=0;i<26;i++){
+	alphabet[alphabetstr.substr(i, 1)]=false;
 }
 
 var cercle=(x, y, rayon, cerclePlein, epaisseur, couleur)=>{
