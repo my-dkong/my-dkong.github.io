@@ -120,6 +120,10 @@ button:hover{
     -webkit-box-ordinal-group: 2;
     box-ordinal-group: 2;
   }
+
+  .absolute{
+    width: 100%; // - For buttons
+  }
 }
 
 button{
