@@ -7,15 +7,7 @@ for(var i=0;i<3574;i++){
 }
 
 event.replace=(string, catactereATrouver, caractereARemplacer)=>{
-	var rendu="";
-	for(var z;z<string.length;z++){
-		letter=string.substr(z, 1);
-		if(letter===catactereATrouver){
-			letter=caractereARemplacer;
-		}
-		rendu+=letter;
-	}
-	return letter;
+	return string.replaceAll(catactereATrouver, caractereARemplacer); // New function basic
 }
 
 //getFrenchWords();
