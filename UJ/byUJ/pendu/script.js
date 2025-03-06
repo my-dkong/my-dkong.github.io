@@ -205,7 +205,7 @@ var sortie;
 
 const update=()=>{
 	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
-	event.select("essais").innerHTML=essais;
+	event.select("essais").innerHTML=essais+" essais"; // L.242
 }
 
 event.select(".ok").addEventListener("click", ()=>{
