@@ -14,17 +14,16 @@ event.replace=(string, catactereATrouver, caractereARemplacer)=>{
 const lettresInterdites="éèêëàâîïôû";
 for(var i=0;i<3574;i++){
 	mots[i]=words[i].name;
-	for(var j=0;j<4;j++){
-		mots[i]=event.replace(mots[i], lettresInterdites.substr(j, 1), "e");
-	}
-	for(var j=4;j<6;j++){
-		mots[i]=event.replace(mots[i], lettresInterdites.substr(j, 1), "a");
-	}
-	for(var j=6;j<8;j++){
-		mots[i]=event.replace(mots[i], lettresInterdites.substr(j, 1), "i");
-	}
-	mots[i]=event.replace(mots[i], lettresInterdites.substr(9, 1), "o");
-	mots[i]=event.replace(mots[i], lettresInterdites.substr(10, 1), "u");
+	mots[i]=event.replace(mots[i], "é", "e");
+	mots[i]=event.replace(mots[i], "è", "e");
+	mots[i]=event.replace(mots[i], "ê", "e");
+	mots[i]=event.replace(mots[i], "ë", "e");
+	mots[i]=event.replace(mots[i], "à", "a");
+	mots[i]=event.replace(mots[i], "â", "a");
+	mots[i]=event.replace(mots[i], "î", "i");
+	mots[i]=event.replace(mots[i], "ï", "i");
+	mots[i]=event.replace(mots[i], "ô", "o");
+	mots[i]=event.replace(mots[i], "û", "u");
 }
 
 var r=(rt)=>{
