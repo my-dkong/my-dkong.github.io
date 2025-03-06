@@ -1,4 +1,5 @@
 // @bugfix arrêt de la boucle infinie while //
+const ecartPerso=125;
 var motsFetches, mots=[];
 var event=new Object();
 for(var i=0;i<3574;i++){
@@ -107,46 +108,46 @@ var cercle=(x, y, rayon, cerclePlein, epaisseur, couleur)=>{
 
 var membres=[
 	function(){
-		cercle(250, 225, 20, true, 5, "#000");
+		cercle(250-ecartPerso, 225, 20, true, 5, "#000");
 	},
 	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 225);
-		ctx.lineTo(250, 275);
+		ctx.moveTo(250-ecartPerso, 225);
+		ctx.lineTo(250-ecartPerso, 275);
 		ctx.stroke();
 	},
 	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 265);
-		ctx.lineTo(225, 230);
+		ctx.moveTo(250-ecartPerso, 265);
+		ctx.lineTo(225-ecartPerso, 230);
 		ctx.stroke();
 	},
 	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 265);
-		ctx.lineTo(275, 230);
+		ctx.moveTo(250-ecartPerso, 265);
+		ctx.lineTo(275-ecartPerso, 230);
 		ctx.stroke();
 	},
 	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 275);
-		ctx.lineTo(230, 295);
+		ctx.moveTo(250-ecartPerso, 275);
+		ctx.lineTo(230-ecartPerso, 295);
 		ctx.stroke();
 	},
 	function(){
 		ctx.strokeStyle="#000";
 		ctx.lineWidth=5;
 		ctx.beginPath();
-		ctx.moveTo(250, 275);
-		ctx.lineTo(270, 295);
+		ctx.moveTo(250-ecartPerso, 275);
+		ctx.lineTo(270-ecartPerso, 295);
 		ctx.stroke();
 	}
 ]
