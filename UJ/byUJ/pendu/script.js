@@ -1,6 +1,10 @@
 // @bugfix arrêt de la boucle infinie while //
-var motsFetches, mots;
+var motsFetches, mots=[];
 var event=new Object();
+for(var i=0;i<3574;i++){
+	mots[i]=null;
+}
+
 event.replace=(string, catactereATrouver, caractereARemplacer)=>{
 	var rendu="";
 	for(var z;z<string.length;z++){
