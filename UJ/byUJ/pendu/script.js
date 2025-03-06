@@ -203,6 +203,11 @@ var nombreLettresManquantes = motSecret.length;
 var reponse;
 var sortie;
 
+const update=()=>{
+	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
+	event.select("scores").innerHTML=essais;
+}
+
 event.select(".ok").addEventListener("click", ()=>{
 	const reponse1=event.select(".letter").innerHTML;
 	event.select(".letter").innerHTML="";
@@ -260,7 +265,7 @@ event.select(".ok").addEventListener("click", ()=>{
 	}else if(event.circuit===999){
 		verif();
 	}
-	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
+	update();
 });
 
 event.select(".annuler").addEventListener("click", ()=>{
@@ -276,7 +281,7 @@ event.select(".annuler").addEventListener("click", ()=>{
 	}else if(event.circuit===999){
 		verif();
 	}
-	event.select(".tableau-reponses").innerHTML=tableauReponses.join(" ");
+	update();
 });
 
 event.select(".letter").addEventListener("keydown", (e)=>{
@@ -329,6 +334,7 @@ event.select(".letter").addEventListener("keydown", (e)=>{
 	// Fin de la boucle de jeu
 }, 50)*/
 
+update();
 event.cacher(".absolute");
 event.prompt("Devine une lettre, ou clique sur Annuler pour quitter la partie.", "Action utilisateur 🙏", ".letter");
 event.circuit=1;
