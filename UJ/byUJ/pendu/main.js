@@ -344,6 +344,6 @@ setInterval(()=>{ // Alternative à while qui forme une boucle infinie
 	if(event.select(".letter").innerText.length>1){
 		event.select(".letter").innerText=event.select(".letter").innerText.substr(0, 1)//
 	}
-}, 50)
+}, 3)
 
 // End
