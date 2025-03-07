@@ -1,3 +1,5 @@
+// @author mydkong, mydkong //
+// @date Friday 7th march 2025 4:04 AM //
 // @bugfix arrêt de la boucle infinie while //
 const ecartPerso=125;
 var motsFetches, mots=[];
@@ -6,24 +8,20 @@ for(var i=0;i<3574;i++){
 	mots[i]=null;
 }
 
-event.replace=(string, catactereATrouver, caractereARemplacer)=>{
-	return string.replaceAll(catactereATrouver, caractereARemplacer); // New function basic
-}
-
 //getFrenchWords();
-const lettresInterdites="éèêëàâîïôû";
+//const lettresInterdites="éèêëàâîïôû";
 for(var i=0;i<3574;i++){
 	mots[i]=words[i].name;
-	mots[i]=event.replace(mots[i], "é", "e");
-	mots[i]=event.replace(mots[i], "è", "e");
-	mots[i]=event.replace(mots[i], "ê", "e");
-	mots[i]=event.replace(mots[i], "ë", "e");
-	mots[i]=event.replace(mots[i], "à", "a");
-	mots[i]=event.replace(mots[i], "â", "a");
-	mots[i]=event.replace(mots[i], "î", "i");
-	mots[i]=event.replace(mots[i], "ï", "i");
-	mots[i]=event.replace(mots[i], "ô", "o");
-	mots[i]=event.replace(mots[i], "û", "u");
+	mots[i].replace("é", "e");
+	mots[i].replace("è", "e");
+	mots[i].replace("ê", "e");
+	mots[i].replace("ë", "e");
+	mots[i].replace("à", "a");
+	mots[i].replace("â", "a");
+	mots[i].replace("î", "i");
+	mots[i].replace("ï", "i");
+	mots[i].replace("ô", "o");
+	mots[i].replace("û", "u");
 }
 
 var r=(rt)=>{
