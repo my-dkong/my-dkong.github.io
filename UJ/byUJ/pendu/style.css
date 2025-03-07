@@ -116,6 +116,11 @@ button:hover{
 
   .body .flexbox{
     flex-direction: column;
+    width: 100%;
+  }
+
+  button{
+    height: 49.5px;
   }
 
   .input-box{
