@@ -1,3 +1,6 @@
+/* @author mydkong, mydkong - UniverseJeux */
+/* @date Friday 7th March 5:05 PM */
+
 .root{
   align-items: center;
   justify-content: center;
@@ -122,7 +125,7 @@ button:hover{
   }
 
   .absolute{
-    width: 100%; // - For buttons
+    width: 100%; /* - For buttons */
   }
 }
 
