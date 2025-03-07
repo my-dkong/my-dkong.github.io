@@ -119,9 +119,9 @@ button:hover{
     width: 100%;
   }
 
-  button{
+  /* button{
     height: 49.5px;
-  }
+  } */
 
   .input-box{
     -moz-box-ordinal-group: 2;
