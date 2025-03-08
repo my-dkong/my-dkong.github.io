@@ -12,24 +12,38 @@
                 <div class="header">
                     <p class="h1">Jeu du pendu</p>
                     <p class="italic">Par&nbsp;<a width="30" height="30" href="/toctoc">UniverseJeux</a></p>
-                </div>
-            </div>
-	<div class="body"><div class="flexbox" align="center"><canvas width="250" height="500"></canvas><essais></essais><!-- event.select("essais") -->
-	<div class="absolute">
+        	</div>
+        </div>
+	<div class="body">
 		<div class="flexbox" align="center">
-			<div class="input-box">
-				<h1 class="title"></h1>
-				<p class="paragraph"></p>
+			<div class="error">
+				Votre appareil est bien trop petit pour pouvoir jouer avec, des erreurs de style peuvent également être commises. <br>
+				Merci d'utiliser un autre appareil. <br>
+				L'équipe UniverseJeux. <br>
+				<br>
+				Vous utilisez un appareil conforme (> 230 pixels de largeur) ? <br>
+				Rejoignez le serveur de support Discord et décrivez votre problème : <br>
+				<button class="help-discord">Rejoindre le serveur Discord<button>
 			</div>
-			<div class="tableau-scores">
-				<h1 class="titre">Tableau :</h1>
-				<p class="tableau-reponses"></p>
+			<canvas width="250" height="500"></canvas>
+			<essais></essais><!-- event.select("essais") -->
+			<div class="absolute">
+				<div class="flexbox" align="center">
+					<div class="input-box">
+						<h1 class="title"></h1>
+						<p class="paragraph"></p>
+					</div>
+					<div class="tableau-scores">
+						<h1 class="titre">Tableau :</h1>
+						<p class="tableau-reponses"></p>
+					</div>
+				</div>
+				<p class="letter" contenteditable="true" id="letter" autofocus></p>
+				<button class="annuler">Annuler</button>
+				<button class="ok" type="submit">Ok</button>
 			</div>
 		</div>
-		<p class="letter" contenteditable="true" id="letter" autofocus></p>
-		<button class="annuler">Annuler</button>
-		<button class="ok" type="submit">Ok</button>
-	</div></div></div></div>
+	</div>
 	<script type="text/javascript" src="flexie.js"></script><!-- - Import Flexie.js -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script><!-- - Import jQuery -->
 	<script type="text/javascript" src="words.js"></script><!-- - Import words object -->
