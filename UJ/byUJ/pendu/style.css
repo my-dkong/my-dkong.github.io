@@ -111,20 +111,6 @@ button:hover{
   .error{
     display: none;
   }
-}
-@media (max-width: 227px){
-  .error{
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    background: #f00;
-    color: #fff;
-    font-size: 1.3rem;
-  }
-}
 
   .flexbox[align="center"] > .tableau-scores{
     -moz-box-ordinal-group: 1;
@@ -148,6 +134,20 @@ button:hover{
     -moz-box-ordinal-group: 2;
     -webkit-box-ordinal-group: 2;
     box-ordinal-group: 2;
+  }
+}
+
+@media (max-width: 227px){
+  .error{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #f00;
+    color: #fff;
+    font-size: 1.3rem;
   }
 }
 
