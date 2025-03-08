@@ -57,6 +57,10 @@ button:hover{
   essais{
     display: none;
   }
+
+  .error{
+    display: none;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1268px){
@@ -82,9 +86,13 @@ button:hover{
   essais{
     display: none;
   }
+
+  .error{
+    display: none;
+  }
 }
 
-@media (max-width: 768px){
+@media (min-width: 228px) and (max-width: 768px){
   .root{
     border-radius: 0;
     padding: 0;
@@ -99,6 +107,24 @@ button:hover{
     width: 100%;
     height: 100%; /* \&- Pour div.root */
   }
+
+  .error{
+    display: none;
+  }
+}
+@media (max-width: 227px){
+  .error{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #f00;
+    color: #fff;
+    font-size: 3rem;
+  }
+}
 
   .flexbox[align="center"] > .tableau-scores{
     -moz-box-ordinal-group: 1;
