@@ -25,15 +25,17 @@
 				Rejoignez le serveur de support Discord et décrivez votre problème : <br>
 				<button class="help-discord">Rejoindre le serveur Discord<button>
 			</div>
-			<div class="nav-error">
-				Votre navigateur est bien trop ancien/n'est pas conforme pour pouvoir jouer avec, des erreurs de style et/ou de script peuvent donc également être commises. <br>
-				Merci d'utiliser un autre appareil. <br>
-				L'équipe UniverseJeux. <br>
-				<br>
-				Vous utilisez un navigateur conforme au normes CSS3 et JavaScript et avez une bonne connexion ? <br>
-				Rejoignez le serveur de support Discord et décrivez votre problème : <br>
-				<button class="help-discord">Rejoindre le serveur Discord<button>
-			</div>
+			<!--[if lte IE 8]>
+				<div class="nav-error">
+					Votre navigateur est bien trop ancien/n'est pas conforme pour pouvoir jouer avec, des erreurs de style et/ou de script peuvent donc également être commises. <br>
+					Merci d'utiliser un autre appareil. <br>
+					L'équipe UniverseJeux. <br>
+					<br>
+					Vous utilisez un navigateur conforme au normes CSS3 et JavaScript et avez une bonne connexion ? <br>
+					Rejoignez le serveur de support Discord et décrivez votre problème : <br>
+					<button class="help-discord">Rejoindre le serveur Discord<button>
+				</div>
+			<[endif]-->
 			<canvas width="250" height="500"></canvas>
 			<essais></essais><!-- event.select("essais") -->
 			<div class="absolute">
