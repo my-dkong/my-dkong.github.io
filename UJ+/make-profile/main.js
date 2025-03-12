@@ -40,17 +40,19 @@ const nextstep=(st)=>{
 }
 
 if(sessionStorage.getItem("IDUSER")!==null){
-  if(localStorage.getItem("USERCONTENT")[sessionStorage.getItem("IDUSER")]!==null){
-    nextstep(++step);
-    event.select(".next-step").addEventListener("click", ()=>{
-      if(iconface!==null){
-        nextstep(++step)
-      }else{
-        if(event.select(".root").indexOf("Cliquez sur une des images")===-1){
-          event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
+  if(localStorage.getItem("USERCONTENT")!==null){
+    if(localStorage.getItem("USERCONTENT")[sessionStorage.getItem("IDUSER")]!==null){
+      nextstep(++step);
+      event.select(".next-step").addEventListener("click", ()=>{
+        if(iconface!==null){
+          nextstep(++step)
+        }else{
+          if(event.select(".root").indexOf("Cliquez sur une des images")===-1){
+            event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
+          }
         }
-      }
-    });
+      });
+    }
   }else{
     window.location.href="../";
   }
