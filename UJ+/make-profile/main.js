@@ -10,15 +10,35 @@ const nextstep=(st)=>{
       <button class="next-step">Continuer</button>`;
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
-      event.select(".icon"+i).addEventListener("click", (e)=>{
-        console.log(e);
-        iconface=String(i);
-      });
-      event.select(".next-step").addEventListener("click", ()=>{
+    }
+    event.select(".icon1").addEventListener("click", (e)=>{
+      console.log(e);
+      iconface=String(0);
+    });
+    event.select(".icon"+2).addEventListener("click", (e)=>{
+      console.log(e);
+      iconface=String(1);
+    });
+    event.select(".icon"+3).addEventListener("click", (e)=>{
+      console.log(e);
+      iconface=String(2);
+    });
+    event.select(".icon"+4).addEventListener("click", (e)=>{
+      console.log(e);
+      iconface=String(3);
+    });
+    event.select(".icon"+5).addEventListener("click", (e)=>{
+      console.log(e);
+      iconface=String(4);
+    });
+    event.select(".icon"+6).addEventListener("click", (e)=>{
+      console.log(e);
+      iconface=String(5);
+    });
+    event.select(".next-step").addEventListener("click", ()=>{
       name=event.select(".input-name").value;
       nextstep(++step);
     });
-    }
   }else if(st===2){
     event.select(".root").innerHTML=`<h1>Étape 2 : Votre nom</h1>
     <p class="subtitle">Entrez le nom par lequel vous voulez que l'on vous appelle</p>
