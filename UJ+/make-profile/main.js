@@ -56,8 +56,8 @@ const nextstep=(st)=>{
     dataLS[sessionStorage.getItem("IDUSER")].name=name;
     localStorage.setItem("UJ+data", JSON.stringify(dataLS));
     event.select(".root").innerHTML=`<h1>Tout est prêt !</h1>
-    <button class="link-uj+">Aller sur UJ+</button>`;
-    event.select(".link-uj+").addEventListener("click", ()=>{window.location.href="../"}); 
+    <button class="link-ujplus">Aller sur UJ+</button>`;
+    event.select(".link-ujplus").addEventListener("click", ()=>{window.location.href="../"}); 
   }
 }
 
