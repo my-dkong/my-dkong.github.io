@@ -11,7 +11,7 @@ const nextstep=(st)=>{
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/icon'+i+'.png">';
       event.select(".icon"+i).addEventListener("click", ()=>{
-        iconface=String(i);/**/
+        iconface=String(i);
       });
     }
   }else if(st===2){
