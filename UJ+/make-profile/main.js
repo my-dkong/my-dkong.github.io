@@ -39,8 +39,8 @@ const nextstep=(st)=>{
 }
 
 if(sessionStorage.getItem("IDUSER")!==null){
-  if(localStorage.getItem("USERCONTENT")!==null){
-    if(localStorage.getItem("USERCONTENT")[sessionStorage.getItem("IDUSER")]!==null){
+  if(localStorage.getItem("UJ+data")!==null){
+    if(localStorage.getItem("UJ+data")[sessionStorage.getItem("IDUSER")]!==null){
       nextstep(++step);
       event.select(".next-step").addEventListener("click", ()=>{
         if(iconface!==null){
@@ -52,7 +52,8 @@ if(sessionStorage.getItem("IDUSER")!==null){
         }
       });
     }else{
-      window.location.href="../";
+      localStorage.setItem("UJ+data", {});
+      window.location.reload();
     }
   }else{
     window.location.href="../";
