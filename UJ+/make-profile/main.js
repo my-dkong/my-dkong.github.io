@@ -14,6 +14,10 @@ const nextstep=(st)=>{
         console.log(e);
         iconface=String(i);
       });
+      event.select(".next-step").addEventListener("click", ()=>{
+      name=event.select(".input-name").value;
+      nextstep(++step);
+    });
     }
   }else if(st===2){
     event.select(".root").innerHTML=`<h1>Étape 2 : Votre nom</h1>
@@ -33,7 +37,6 @@ const nextstep=(st)=>{
     localStorage.setItem("UJ+data", JSON.stringify(dataLS));
     event.select(".root").innerHTML=`<h1>Tout est prêt !</h1>
     <button class="link-uj+">Aller sur UJ+</button>`;
-    nextstep(++step);
     event.select(".link-uj+").addEventListener("click", ()=>{window.location.href="../"}); 
   }
 }
@@ -48,6 +51,10 @@ if(sessionStorage.getItem("IDUSER")!==null){
         }else{
           if(event.select(".root").innerHTML.indexOf("Cliquez sur une des images")===-1){
             event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
+            event.select(".next-step").addEventListener("click", ()=>{
+              name=event.select(".input-name").value;
+              nextstep(++step);
+            }); 
           }
         }
       });
