@@ -10,7 +10,8 @@ const nextstep=(st)=>{
       <button class="next-step">Continuer</button>`;
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
-      event.select(".icon"+i).addEventListener("click", ()=>{
+      event.select(".icon"+i).addEventListener("click", (e)=>{
+        console.log(e);
         iconface=String(i);
       });
     }
@@ -19,15 +20,22 @@ const nextstep=(st)=>{
     <p class="subtitle">Entrez le nom par lequel vous voulez que l'on vous appelle</p>
     <input type="text" class="input-name">
     <button class="next-step">Continuer</button>`;
+    nextstep(++step);
+    event.select(".next-step").addEventListener("click", ()=>{
+      name=event.select(".input-name").value;
+      nextstep(++step);
+    }); 
   }else if(st===3){
     name=event.select(".input-name").value;
     const dataLS=new Object();
     dataLS[sessionStorage.getItem("IDUSER")]=new Object();
     dataLS[sessionStorage.getItem("IDUSER")].iconface=iconface;
     dataLS[sessionStorage.getItem("IDUSER")].name=name;
-    localStorage.setItem("UJ+data", data);
+    localStorage.setItem("UJ+data", dataLS);
     event.select(".root").innerHTML=`<h1>Tout est prêt !</h1>
     <button class="link-uj+">Aller sur UJ+</button>`;
+    nextstep(++step);
+    event.select(".link-uj").addEventListener("click", ()=>{window.location.href="../"}); 
   }
 }
 
