@@ -9,7 +9,7 @@ const nextstep=(st)=>{
       <div class="img-pp"></div>
       <button class="next-step">Continuer</button>`;
     for(var i=0;i<6;i++){
-      event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/icon'+i+'.png">';
+      event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+i+'.webp">';
       event.select(".icon"+i).addEventListener("click", ()=>{
         iconface=String(i);
       });
