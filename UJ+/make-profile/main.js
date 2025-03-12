@@ -30,7 +30,7 @@ const nextstep=(st)=>{
     dataLS[sessionStorage.getItem("IDUSER")]=new Object();
     dataLS[sessionStorage.getItem("IDUSER")].iconface=iconface;
     dataLS[sessionStorage.getItem("IDUSER")].name=name;
-    localStorage.setItem("UJ+data", dataLS);
+    localStorage.setItem("UJ+data", JSON.stringify(dataLS));
     event.select(".root").innerHTML=`<h1>Tout est prêt !</h1>
     <button class="link-uj+">Aller sur UJ+</button>`;
     nextstep(++step);
@@ -40,7 +40,7 @@ const nextstep=(st)=>{
 
 if(sessionStorage.getItem("IDUSER")!==null){
   if(localStorage.getItem("UJ+data")!==null){
-    if(localStorage.getItem("UJ+data")[sessionStorage.getItem("IDUSER")]!==null){
+    if(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")]!==null){
       nextstep(++step);
       event.select(".next-step").addEventListener("click", ()=>{
         if(iconface!==null){
@@ -52,11 +52,12 @@ if(sessionStorage.getItem("IDUSER")!==null){
         }
       });
     }else{
-      localStorage.setItem("UJ+data", {});
+      localStorage.setItem("UJ+data", JSON.stringify({}));
       window.location.reload();
     }
   }else{
-    window.location.href="../";
+    localStorage.setItem("UJ+data", JSON.stringify({}));
+    window.location.reload();
   }
 }else{
   window.location.href="../login/";
