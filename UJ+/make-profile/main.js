@@ -46,7 +46,7 @@ if(sessionStorage.getItem("IDUSER")!==null){
         if(iconface!==null){
           nextstep(++step)
         }else{
-          if(event.select(".root").indexOf("Cliquez sur une des images")===-1){
+          if(event.select(".root").innerHTML.indexOf("Cliquez sur une des images")===-1){
             event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
           }
         }
