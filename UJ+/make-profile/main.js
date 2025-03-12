@@ -20,7 +20,6 @@ const nextstep=(st)=>{
     <p class="subtitle">Entrez le nom par lequel vous voulez que l'on vous appelle</p>
     <input type="text" class="input-name">
     <button class="next-step">Continuer</button>`;
-    nextstep(++step);
     event.select(".next-step").addEventListener("click", ()=>{
       name=event.select(".input-name").value;
       nextstep(++step);
@@ -35,7 +34,7 @@ const nextstep=(st)=>{
     event.select(".root").innerHTML=`<h1>Tout est prêt !</h1>
     <button class="link-uj+">Aller sur UJ+</button>`;
     nextstep(++step);
-    event.select(".link-uj").addEventListener("click", ()=>{window.location.href="../"}); 
+    event.select(".link-uj+").addEventListener("click", ()=>{window.location.href="../"}); 
   }
 }
 
@@ -52,6 +51,8 @@ if(sessionStorage.getItem("IDUSER")!==null){
           }
         }
       });
+    }else{
+      window.location.href="../";
     }
   }else{
     window.location.href="../";
