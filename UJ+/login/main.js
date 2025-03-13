@@ -43,7 +43,11 @@ event.select(".validate-signin").addEventListener("click", ()=>{
     if(ENCODED_ACCOUNTS.content.indexOf(String(BigInt(textToNumber(event.select(".password-input").value))-BigInt(textToNumber(event.select(".username-input").value))))>-1){
         console.log("Connecté !");
         sessionStorage.setItem("IDUSER", String(BigInt(textToNumber(event.select(".password-input").value))-BigInt(textToNumber(event.select(".username-input").value))));
-        window.location.href="/UJ+";
+        if(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")]===undefined){
+            window.location.href="/UJ+/make-profile/";
+        }else{
+            window.location.href="/UJ+";
+        }
     }else{
         console.log("MDP pas bon");
     }
