@@ -11,27 +11,27 @@ const nextstep=(st)=>{
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
     }
-    event.select(".icon1").addEventListener("click", (e)=>{
+    event.select(".icon0").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(0);
     });
-    event.select(".icon"+2).addEventListener("click", (e)=>{
+    event.select(".icon1").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(1);
     });
-    event.select(".icon"+3).addEventListener("click", (e)=>{
+    event.select(".icon2").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(2);
     });
-    event.select(".icon"+4).addEventListener("click", (e)=>{
+    event.select(".icon3").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(3);
     });
-    event.select(".icon"+5).addEventListener("click", (e)=>{
+    event.select(".icon4").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(4);
     });
-    event.select(".icon"+6).addEventListener("click", (e)=>{
+    event.select(".icon5").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(5);
     });
