@@ -35,10 +35,10 @@ const nextstep=(st)=>{
       console.log(e);
       iconface=String(5);
     });
-    event.select(".next-step").addEventListener("click", ()=>{
-      name=event.select(".input-name").value;
-      nextstep(++step);
-    });
+    //event.select(".next-step").addEventListener("click", ()=>{
+    //  name=event.select(".input-name").value;
+    //  nextstep(++step);
+    //});
   }else if(st===2){
     event.select(".root").innerHTML=`<h1>Étape 2 : Votre nom</h1>
     <p class="subtitle">Entrez le nom par lequel vous voulez que l'on vous appelle</p>
