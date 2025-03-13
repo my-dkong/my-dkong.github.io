@@ -31,7 +31,7 @@ if(sessionStorage.getItem("IDUSER")===null){
   <p class="subtitle">Connexion à votre compte UniverseJeux Premium</p>
   <div class="identifiants">
       <label for="username-input" class="username-pre">Identifiant&nbsp;:&nbsp;</label><input type="text" id="username-input" class="username-input" placeholder="truite68"><br>
-      <label for="password-input" class="password-pre">Mot de passe&nbsp;:&nbsp;</label><input type="text" id="password-input" class="password-input"><br>
+      <label for="password-input" class="password-pre">Mot de passe&nbsp;:&nbsp;</label><input type="password" id="password-input" class="password-input"><br>
       <button class="validate-signin">Connexion</button>
       <p class="qq-sans-compte">Pas de compte UJ+ ? <a href="./signup/">Créer un compte</a></p>
   </div>`;
