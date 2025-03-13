@@ -63,7 +63,7 @@ const nextstep=(st)=>{
 
 if(sessionStorage.getItem("IDUSER")!==null){
   if(localStorage.getItem("UJ+data")!==null){
-    if(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")]!==null){
+    if(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")]===undefined){
       nextstep(++step);
       event.select(".next-step").addEventListener("click", ()=>{
         if(iconface!==null){
@@ -79,8 +79,7 @@ if(sessionStorage.getItem("IDUSER")!==null){
         }
       });
     }else{
-      localStorage.setItem("UJ+data", JSON.stringify({}));
-      window.location.reload();
+      window.location.href="../";
     }
   }else{
     localStorage.setItem("UJ+data", JSON.stringify({}));
