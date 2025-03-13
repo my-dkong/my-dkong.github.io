@@ -71,10 +71,6 @@ if(sessionStorage.getItem("IDUSER")!==null){
         }else{
           if(event.select(".root").innerHTML.indexOf("Cliquez sur une des images")===-1){
             event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
-            event.select(".next-step").addEventListener("click", ()=>{
-              name=event.select(".input-name").value;
-              nextstep(++step);
-            }); 
           }
         }
       });
