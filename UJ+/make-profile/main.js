@@ -10,12 +10,12 @@ const imgf=()=>{
     if(event.select(".root").innerHTML.indexOf("Cliquez sur une des images")===-1){
       event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
       event.select(".next-step").addEventListener("click", imgf);
-      event.select(".icon0").addEventListener("click", (e)=>maj1);
-      event.select(".icon1").addEventListener("click", (e)=>maj2);
-      event.select(".icon2").addEventListener("click", (e)=>maj3);
-      event.select(".icon3").addEventListener("click", (e)=>maj4);
-      event.select(".icon4").addEventListener("click", (e)=>maj5);
-      event.select(".icon5").addEventListener("click", (e)=>maj6);
+      event.select(".icon0").addEventListener("click", maj1);
+      event.select(".icon1").addEventListener("click", maj2);
+      event.select(".icon2").addEventListener("click", maj3);
+      event.select(".icon3").addEventListener("click", maj4);
+      event.select(".icon4").addEventListener("click", maj5);
+      event.select(".icon5").addEventListener("click", maj6);
     }
   }
 }
