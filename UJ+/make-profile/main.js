@@ -62,7 +62,7 @@ const nextstep=(st)=>{
     }); 
   }else if(st===3){
     name=event.select(".input-name").value;
-    const dataLS=new Object();
+    const dataLS=JSON.parse(localStorage.getItem("UJ+data"));
     dataLS[sessionStorage.getItem("IDUSER")]=new Object();
     dataLS[sessionStorage.getItem("IDUSER")].iconface=iconface;
     dataLS[sessionStorage.getItem("IDUSER")].name=name;
