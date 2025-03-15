@@ -14,6 +14,25 @@ const imgf=()=>{
   }
 }
 
+const maj1=()=>{
+  iconface=String(0);
+}
+const maj1=()=>{
+  iconface=String(0);
+}
+const maj1=()=>{
+  iconface=String(0);
+}
+const maj1=()=>{
+  iconface=String(0);
+}
+const maj1=()=>{
+  iconface=String(0);
+}
+const maj1=()=>{
+  iconface=String(0);
+}
+                             ///////////////////////
 const nextstep=(st)=>{
   if(st===1){
     event.select(".root").innerHTML=`<h1>Étape 1 : Votre icône de profil</h1>
@@ -23,14 +42,8 @@ const nextstep=(st)=>{
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
     }
-    event.select(".icon0").addEventListener("click", (e)=>{
-      console.log(e);
-      iconface=String(0);
-    });
-    event.select(".icon1").addEventListener("click", (e)=>{
-      console.log(e);
-      iconface=String(1);
-    });
+    event.select(".icon0").addEventListener("click", (e)=>maj);
+    event.select(".icon1").addEventListener("click", (e)=>maj);
     event.select(".icon2").addEventListener("click", (e)=>{
       console.log(e);
       iconface=String(2);
