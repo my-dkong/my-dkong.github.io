@@ -2,6 +2,18 @@ var event=new Object(), step=0, iconface=null, name=null;
 event.select=(str)=>{
   return document.querySelector(str);
 }
+
+const imgf=()=>{
+  if(iconface!==null){
+    nextstep(++step)
+  }else{
+    if(event.select(".root").innerHTML.indexOf("Cliquez sur une des images")===-1){
+      event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
+      event.select(".next-step").addEventListener("click", imgf);
+    }
+  }
+}
+
 const nextstep=(st)=>{
   if(st===1){
     event.select(".root").innerHTML=`<h1>Étape 1 : Votre icône de profil</h1>
@@ -65,15 +77,7 @@ if(sessionStorage.getItem("IDUSER")!==null){
   if(localStorage.getItem("UJ+data")!==null){
     if(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")]===undefined){
       nextstep(++step);
-      event.select(".next-step").addEventListener("click", ()=>{
-        if(iconface!==null){
-          nextstep(++step)
-        }else{
-          if(event.select(".root").innerHTML.indexOf("Cliquez sur une des images")===-1){
-            event.select(".root").innerHTML+='<h1 style="color: red;">Cliquez sur une des images</h1>';
-          }
-        }
-      });
+      event.select(".next-step").addEventListener("click", imgf);
     }else{
       window.location.href="../";
     }
