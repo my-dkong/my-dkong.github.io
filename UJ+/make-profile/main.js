@@ -53,12 +53,12 @@ const nextstep=(st)=>{
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
     }
-    event.select(".icon0").addEventListener("click", (e)=>maj1);
-    event.select(".icon1").addEventListener("click", (e)=>maj2);
-    event.select(".icon2").addEventListener("click", (e)=>maj3);
-    event.select(".icon3").addEventListener("click", (e)=>maj4);
-    event.select(".icon4").addEventListener("click", (e)=>maj5);
-    event.select(".icon5").addEventListener("click", (e)=>maj6);
+    event.select(".icon0").addEventListener("click", maj1);
+    event.select(".icon1").addEventListener("click", maj2);
+    event.select(".icon2").addEventListener("click", maj3);
+    event.select(".icon3").addEventListener("click", maj4);
+    event.select(".icon4").addEventListener("click", maj5);
+    event.select(".icon5").addEventListener("click", maj6);
     //event.select(".next-step").addEventListener("click", ()=>{
     //  name=event.select(".input-name").value;
     //  nextstep(++step);
@@ -102,10 +102,10 @@ if(sessionStorage.getItem("IDUSER")!==null){
 }
 
 setInterval(()=>{
-  event.select(".icon0").addEventListener("click", (e)=>maj1);
-  event.select(".icon1").addEventListener("click", (e)=>maj2);
-  event.select(".icon2").addEventListener("click", (e)=>maj3);
-  event.select(".icon3").addEventListener("click", (e)=>maj4);
-  event.select(".icon4").addEventListener("click", (e)=>maj5);
-  event.select(".icon5").addEventListener("click", (e)=>maj6);
+  event.select(".icon0").addEventListener("click", maj1);
+  event.select(".icon1").addEventListener("click", maj2);
+  event.select(".icon2").addEventListener("click", maj3);
+  event.select(".icon3").addEventListener("click", maj4);
+  event.select(".icon4").addEventListener("click", maj5);
+  event.select(".icon5").addEventListener("click", maj6);
 }, 10)
