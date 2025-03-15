@@ -15,24 +15,24 @@ const imgf=()=>{
 }
 
 const maj1=()=>{
-  iconface=String(0);
+  iconface="0";
 }
-const maj1=()=>{
-  iconface=String(0);
+const maj2=()=>{
+  iconface=String(1);
 }
-const maj1=()=>{
-  iconface=String(0);
+const maj3=()=>{
+  iconface=String(2);
 }
-const maj1=()=>{
-  iconface=String(0);
+const maj4=()=>{
+  iconface=String(3);
 }
-const maj1=()=>{
-  iconface=String(0);
+const maj5=()=>{
+  iconface=String(4);
 }
-const maj1=()=>{
-  iconface=String(0);
+const maj6=()=>{
+  iconface=String(5);
 }
-                             ///////////////////////
+
 const nextstep=(st)=>{
   if(st===1){
     event.select(".root").innerHTML=`<h1>Étape 1 : Votre icône de profil</h1>
@@ -42,24 +42,12 @@ const nextstep=(st)=>{
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
     }
-    event.select(".icon0").addEventListener("click", (e)=>maj);
-    event.select(".icon1").addEventListener("click", (e)=>maj);
-    event.select(".icon2").addEventListener("click", (e)=>{
-      console.log(e);
-      iconface=String(2);
-    });
-    event.select(".icon3").addEventListener("click", (e)=>{
-      console.log(e);
-      iconface=String(3);
-    });
-    event.select(".icon4").addEventListener("click", (e)=>{
-      console.log(e);
-      iconface=String(4);
-    });
-    event.select(".icon5").addEventListener("click", (e)=>{
-      console.log(e);
-      iconface=String(5);
-    });
+    event.select(".icon0").addEventListener("click", (e)=>maj1);
+    event.select(".icon1").addEventListener("click", (e)=>maj2);
+    event.select(".icon2").addEventListener("click", (e)=>maj3);
+    event.select(".icon3").addEventListener("click", (e)=>maj4);
+    event.select(".icon4").addEventListener("click", (e)=>maj5);
+    event.select(".icon5").addEventListener("click", (e)=>maj6);
     //event.select(".next-step").addEventListener("click", ()=>{
     //  name=event.select(".input-name").value;
     //  nextstep(++step);
