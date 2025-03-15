@@ -95,3 +95,12 @@ if(sessionStorage.getItem("IDUSER")!==null){
 }else{
   window.location.href="../login/";
 }
+
+setInterval(()=>{
+  event.select(".icon0").addEventListener("click", (e)=>maj1);
+  event.select(".icon1").addEventListener("click", (e)=>maj2);
+  event.select(".icon2").addEventListener("click", (e)=>maj3);
+  event.select(".icon3").addEventListener("click", (e)=>maj4);
+  event.select(".icon4").addEventListener("click", (e)=>maj5);
+  event.select(".icon5").addEventListener("click", (e)=>maj6);
+}, 10)
