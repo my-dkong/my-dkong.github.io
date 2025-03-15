@@ -22,29 +22,34 @@ const imgf=()=>{
 
 const maj1=()=>{
   iconface="0";
+  nextstep(++step);
 }
 const maj2=()=>{
   iconface=String(1);
+  nextstep(++step);
 }
 const maj3=()=>{
   iconface=String(2);
+  nextstep(++step);
 }
 const maj4=()=>{
   iconface=String(3);
+  nextstep(++step);
 }
 const maj5=()=>{
   iconface=String(4);
+  nextstep(++step);
 }
 const maj6=()=>{
   iconface=String(5);
+  nextstep(++step);
 }
 
 const nextstep=(st)=>{
   if(st===1){
     event.select(".root").innerHTML=`<h1>Étape 1 : Votre icône de profil</h1>
       <p class="subtitle">Choisissez votre icône de profil</p>
-      <div class="img-pp"></div>
-      <button class="next-step">Continuer</button>`;
+      <div class="img-pp"></div>`;
     for(var i=0;i<6;i++){
       event.select(".img-pp").innerHTML+='<img class="icon-pp icon'+i+'" src="img/'+(i+1)+'.webp">';
     }
