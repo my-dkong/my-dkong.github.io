@@ -1,4 +1,4 @@
-var event.select=new Object();
+var event=new Object();
 event.select=(str)=>{
   return document.querySelector(str);
 }
