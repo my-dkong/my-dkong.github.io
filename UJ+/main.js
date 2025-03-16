@@ -24,11 +24,11 @@ if(sessionStorage.getItem("IDUSER")===null){
       <img src="gd-normal.png"><br>
       Geometry Dash
     </a>
-    <a href="gd?p=216343253&p=t>
+    <a href="gd?p=216343253&p="t>
       <img src="gd-subzero.png"><br>
       Geometry Dash Subzero
     </a>
-    <a href="gd?p=143663274&p=t>
+    <a href="gd?p=143663274&p=t">
       <img src="gd-meltdown.png"><br>
       Geometry Dash Meltdown
     </a>
