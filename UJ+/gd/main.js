@@ -18,7 +18,7 @@ if(sessionStorage.getItem("IDUSER")===null){
   if(getParameterByName("l")<6){
     event.select(".root").innerHTML=`
     <h1>Geometry Dash niveaux <span class="niveaux-span"></span>`;
-    for(var i<0;i<6;i++){
+    for(var i=0;i<6;i++){
       event.select(".niveaux-span").innerHTML=levels.content[0].levels[getParameterByName("l").levels[i];
     }
     event.select(".root").innerHTML+=`<p>Suite...</p>`;
