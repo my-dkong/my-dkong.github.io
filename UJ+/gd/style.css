@@ -1,6 +1,6 @@
 iframe[src*="//turbowarp.org/"]{
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 button.go-back{
@@ -9,11 +9,20 @@ button.go-back{
   top: 10px;
   left: 10px;
   border: none;
-  border-radius: 0;
   background: rgba(0, 0, 0, 0);
 }
 
 button.go-back svg{
   height: 100%;
   width: auto;
+}
+
+button.go-back#text{
+  color: #fff;
+}
+
+:root{
+  background: #444;
+  color: #fff;
+  fill: #fff;
 }
