@@ -5,7 +5,7 @@ iframe[src*="//turbowarp.org/"]{
 
 button.go-back{
   cursor: pointer;
-  position: relative;
+  position: absolute;
   top: 10px;
   left: 10px;
   border: none;
