@@ -22,9 +22,11 @@ if(sessionStorage.getItem("IDUSER")===null){
         <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
       </svg>
     <br>Retour en arrière</button>
-    <h1>Geometry Dash niveaux <span class="niveaux-span"></span>`;
+    <div align="center" class="main">
+      <h1>Geometry Dash niveaux <span class="niveaux-span"></span>
+    </div>`;
     event.select(".niveaux-span").innerHTML=levels.content[0].levels[getParameterByName("l")].levels.join(", ")+".";
-    event.select(".root").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[0].levels[getParameterByName("l")].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
+    event.select(".main").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[0].levels[getParameterByName("l")].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
   }
 }
 
