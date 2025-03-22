@@ -2,3 +2,9 @@ iframe[src*="//turbowarp.org/"]{
   border: none;
   border-radius: 20px;
 }
+
+button.go-back{
+  position: relative;
+  top: 20;
+  left: 20;
+}
