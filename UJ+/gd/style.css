@@ -4,7 +4,16 @@ iframe[src*="//turbowarp.org/"]{
 }
 
 button.go-back{
+  cursor: pointer;
   position: relative;
-  top: 20;
-  left: 20;
+  top: 10px;
+  left: 10px;
+  border: none;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+button.go-back svg{
+  height: 100%;
+  width: auto;
 }
