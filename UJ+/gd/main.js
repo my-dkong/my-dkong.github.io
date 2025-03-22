@@ -22,3 +22,8 @@ if(sessionStorage.getItem("IDUSER")===null){
     event.select(".root").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[0].levels[getParameterByName("l")].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
   }
 }
+
+event.select(".go-back").addEventListener("click", ()=>{
+  console.info("retour en arrière");
+  history.back();
+});
