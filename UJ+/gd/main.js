@@ -17,6 +17,11 @@ if(sessionStorage.getItem("IDUSER")===null){
 }else if(getParameterByName("l")>-1 && getParameterByName("l")<8){
   if(getParameterByName("l")<6){
     event.select(".root").innerHTML=`
+    <button class="go-back">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
+      </svg>
+    <br>Retour en arrière</button>
     <h1>Geometry Dash niveaux <span class="niveaux-span"></span>`;
     event.select(".niveaux-span").innerHTML=levels.content[0].levels[getParameterByName("l")].levels.join(", ")+".";
     event.select(".root").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[0].levels[getParameterByName("l")].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
