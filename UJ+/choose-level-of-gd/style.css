@@ -1,0 +1,19 @@
+.gd-box-level img{
+  width: 90px;
+  height: auto;
+}
+
+.gd-box-level{
+  width: 90px;
+  height: auto;
+}
+
+.levels{
+  display: flex;
+  gap: 15px;
+}
+
+:root{
+  color: #fff;
+  background: #444;
+}
