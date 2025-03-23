@@ -8,24 +8,24 @@ if(sessionStorage.getItem("IDUSER")!==null){
   event.select(".root").innerHTML=`<h1>Choisissez votre niveau Geometry Dash</h1>
   <div class="levels"></div>`;
   for(var i=0;i<levels.content.levels.length;i++){
-    event.select(".levels").innerHTML+='<div class="gd-box-level"><img class="gd-img'+i+'" src="gd-icons/icon'+i+'.png" alt="Icône Geometry Dash n°'+(i+1)+'"></div>';
+    event.select(".levels").innerHTML+='<div class="gd-box-level"><img class="gd-img'+i+'" src="gd-icons/icon'+i+'.png" alt="Icône Geometry Dash n°'+(i+1)+'"><br>GD '+(levels.content[0].levels[getParameterByName("l")].levels.join(", ")+".")+'</div>';
   }
   event.select(".gd-img0").addEventListener("click", ()=>{
-    window.location.href="/UJ+/gd?l=0/";
+    window.location.href="/UJ+/gd?l=0";
   });
   event.select(".gd-img1").addEventListener("click", ()=>{
-    window.location.href="/UJ+/gd?l=1/";
+    window.location.href="/UJ+/gd?l=1";
   });
   event.select(".gd-img2").addEventListener("click", ()=>{
-    window.location.href="/UJ+/gd?l=2/";
+    window.location.href="/UJ+/gd?l=2";
   });
   event.select(".gd-img3").addEventListener("click", ()=>{
-    window.location.href="/UJ+/gd?l=3/";
+    window.location.href="/UJ+/gd?l=3";
   });
   event.select(".gd-img4").addEventListener("click", ()=>{
-    window.location.href="/UJ+/gd?l=4/";
+    window.location.href="/UJ+/gd?l=4";
   });
   event.select(".gd-img5").addEventListener("click", ()=>{
-    window.location.href="/UJ+/gd?l=5/";
+    window.location.href="/UJ+/gd?l=5";
   });
 }
