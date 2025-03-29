@@ -23,7 +23,7 @@ if(sessionStorage.getItem("IDUSER")===null){
       </svg>
     <br>Retour en arrière</button>
     <div align="center" class="main">
-      <h1>Geometry Dash niveaux <span class="niveaux-span"></span>
+      <h1>Geometry Dash niveaux <span class="niveaux-span"></span></h1>
     </div>`;
     event.select(".niveaux-span").innerHTML=levels.content[0].levels[getParameterByName("l")].levels.join(", ")+".";
     event.select(".main").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[0].levels[getParameterByName("l")].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
@@ -35,7 +35,7 @@ if(sessionStorage.getItem("IDUSER")===null){
       </svg>
     <br>Retour en arrière</button>
     <div align="center" class="main">
-      <h1>Geometry Dash niveaux <span class="niveaux-span"></span>
+      <h1>Geometry Dash Subzero</h1>
     </div>`;
     event.select(".main").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[1].levels[0].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
   }else if(getParameterByName("l")==7){
@@ -46,7 +46,7 @@ if(sessionStorage.getItem("IDUSER")===null){
       </svg>
     <br>Retour en arrière</button>
     <div align="center" class="main">
-      <h1>Geometry Dash niveaux <span class="niveaux-span"></span>
+      <h1>Geometry Dash MeltDown</h1>
     </div>`;
     event.select(".main").innerHTML+=`<iframe src="https://turbowarp.org/`+levels.content[2].levels[0].id+`/embed" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
   }
