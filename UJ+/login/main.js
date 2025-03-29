@@ -41,7 +41,7 @@ if(sessionStorage.getItem("IDUSER")===null){
 
 event.select(".validate-signin").addEventListener("click", ()=>{
     if(ENCODED_ACCOUNTS.content.indexOf(String(BigInt(textToNumber(event.select(".password-input").value))-BigInt(textToNumber(event.select(".username-input").value))))>-1){
-        console.log("Connecté !");
+        console.info("Connecté !");
         sessionStorage.setItem("IDUSER", String(BigInt(textToNumber(event.select(".password-input").value))-BigInt(textToNumber(event.select(".username-input").value))));
         if(localStorage.getItem("UJ+data")!==null){
             if(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")]===undefined){
@@ -53,7 +53,13 @@ event.select(".validate-signin").addEventListener("click", ()=>{
             localStorage.setItem("UJ+data", JSON.stringify({}));
         }
     }else{
-        console.log("MDP pas bon");
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        console.info("MDP pas bon");
+        event.select(".identifiants").innerHTML+=`<div class="error-mdp">
+            <img alt="/!\" src="error.png">
+            <p>Erreur de connexion : l'utilisateur et/ou le mot de passe ne semble pas être bon... Veuillez réessayer.</p>
+        </div>`;
+        setTimeout(()=>{
+            document.querySelectorAll(".error-mdp")[0].innerHTML="";
+        }, 5000);
     }
 });
