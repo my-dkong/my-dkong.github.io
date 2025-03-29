@@ -55,11 +55,11 @@ event.select(".validate-signin").addEventListener("click", ()=>{
     }else{
         console.info("MDP pas bon");
         event.select(".identifiants").innerHTML+=`<div class="error-mdp">
-            <img alt="/!\" src="error.png">
+            <img alt="/!\\" src="error.png">
             <p>Erreur de connexion : l'utilisateur et/ou le mot de passe ne semble pas être bon... Veuillez réessayer.</p>
         </div>`;
         setTimeout(()=>{
-            document.querySelectorAll(".error-mdp")[0].innerHTML="";
-        }, 5000);
+            document.querySelectorAll(".error-mdp")[0].remove();
+        }, 2500);
     }
 });
