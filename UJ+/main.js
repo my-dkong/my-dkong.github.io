@@ -18,6 +18,7 @@ if(sessionStorage.getItem("IDUSER")===null){
     </ol>
   </li>
   </ol>
+  <div class="box-account"></div>
   <h1>Geometry Dash</h1>
   <div class="flexbox">
     <a href="choose-level-of-gd">
@@ -45,4 +46,6 @@ if(sessionStorage.getItem("IDUSER")===null){
     localStorage.removeItem("UJ+data");
     window.location.reload();
   });
+  document.querySelector(".box-account").innerHTML=`<img src="/UJ+/make-profile/img/`+(Number(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].iconface)+1)+`.webp">
+    <p class="username">`+JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].name+`</p>`;
 }
