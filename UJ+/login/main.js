@@ -39,7 +39,7 @@ if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="../"
 }
 
-event.select(".validate-signin").addEventListener("click", ()=>{
+const functemp=()=>{
     if(ENCODED_ACCOUNTS.content.indexOf(String(BigInt(textToNumber(event.select(".password-input").value))-BigInt(textToNumber(event.select(".username-input").value))))>-1){
         console.info("Connecté !");
         sessionStorage.setItem("IDUSER", String(BigInt(textToNumber(event.select(".password-input").value))-BigInt(textToNumber(event.select(".username-input").value))));
@@ -62,4 +62,7 @@ event.select(".validate-signin").addEventListener("click", ()=>{
             document.querySelectorAll(".error-mdp")[0].remove();
         }, 2500);
     }
-});
+    event.select(".validate-signin").addEventListener("click", functemp);
+};
+
+event.select(".validate-signin").addEventListener("click", functemp);
