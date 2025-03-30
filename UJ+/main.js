@@ -73,8 +73,8 @@ if(sessionStorage.getItem("IDUSER")===null){
       },
       body: JSON.stringify(message)
     })
-    .then(response => console.log("Message envoyé !"))
-    .catch(error => console.error("Erreur :", error));
+    .then(response => alert("Message envoyé !"))
+    .catch(error => alert("Erreur :", error));
   });
 	document.querySelector(".show-hide-return").addEventListener("click", ()=>{
 		document.querySelector(".box-return").hidden=!document.querySelector(".box-return").hidden; // @note fait basculer la visibilité du champ de saisie //
