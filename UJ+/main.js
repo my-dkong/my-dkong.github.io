@@ -73,8 +73,8 @@ if(sessionStorage.getItem("IDUSER")===null){
       },
       body: JSON.stringify(message)
     })
-    .then(response => alert("Message envoyé !"))
-    .catch(error => alert("Erreur :"+error));
+    .then(response => {alert("Message envoyé !");document.querySelector(".text-to-discord").value=''})
+    .catch(error => {alert("Erreur :"+error)});
   });
 	document.querySelector(".show-hide-return").addEventListener("click", ()=>{
 		document.querySelector(".box-return").hidden=!document.querySelector(".box-return").hidden; // @note fait basculer la visibilité du champ de saisie //
