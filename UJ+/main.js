@@ -33,7 +33,36 @@ if(sessionStorage.getItem("IDUSER")===null){
       <img src="gd-meltdown.png"><br>
       Geometry Dash Meltdown
     </a>
-  </div>`;
+  </div>
+  <input type="text" class="text-to-discord"><a class="button-text-to-discord" href="javascript:void(0)">Envoyer</a>`;
+  document.querySelector(".button-text-to-discord").addEventListener("click", ()=>{
+    var webhookURL=WEBHOOKS[Math.floor(Math.random()*5)]
+    var message={
+	    "embeds": [
+        {
+          "title": "Message provenant du site d'UJ+",
+          "description": document.querySelector(".text-to-discord").value,
+          "color": 4473924,
+		    	"thumbnail": {
+            "url": "https://my-dkong.github.io/home/paramDkong/images/petitesIcones/UJ.png"
+          },
+		    	footer: {
+            text: "UniverseJeux",
+            icon_url: "https://my-dkong.github.io/home/paramDkong/images/petitesIcones/UJ.png"
+          }
+        }
+      ]
+    }
+    fetch(webhookURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(message)
+    })
+    .then(response => console.log("Message envoyé !"))
+    .catch(error => console.error("Erreur :", error));
+  });
   document.querySelector(".deconnexion-button").addEventListener("click", ()=>{
     document.querySelector(".deconnexion-options-menu").hidden=!document.querySelector(".deconnexion-options-menu").hidden;
   });
