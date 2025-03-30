@@ -6,6 +6,7 @@ event.select=(str)=>{
 if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="login/";
 }else{
+	const webhooks=[ "https://discord.com/api/webhooks/1355823238508187658/qX8NSM26VLiIrTyRP-UCY4o00_-2oFSlyeuid9JpopmpBPdrN98gQtIKJLw12C18PU3I", "https://discord.com/api/webhooks/1355823663458418708/K3sryY-8p7oDIRHadNclwEGADkZNbDXFMtAENNIMdNTBL6W-tykHFqfMj22-3MH0_EV5", "https://discord.com/api/webhooks/1355823820526850182/GdxETYHJ1ZNMsBlyczv0NancLcD9aciwf8t3KSCiCwMRkCl9u0FTGLsL_v6fgeGOSM7W", "https://discord.com/api/webhooks/1355823836884635688/0xGULeWVBl4v1ZdYMEujVm3RhtVXH4larqDDR52qiuGigj5jH8GvQNqGmNoxKuIqI5wr", "https://discord.com/api/webhooks/1355823842089766952/WgGFIWukh0MjidmJlgMXu7rJi453O_73VzmRNe4nDPvyVJLUJ9sgOdHCUgtQI2YvSqTt" ]
   document.querySelector(".root").innerHTML=`<ol class="header-options">
   <li class="img-in-header">
     <img src="/home/paramDkong/images/petitesIcones/UJplus.png">
@@ -36,7 +37,7 @@ if(sessionStorage.getItem("IDUSER")===null){
   </div>
   <input type="text" class="text-to-discord"><a class="button-text-to-discord" href="javascript:void(0)">Envoyer</a>`;
   document.querySelector(".button-text-to-discord").addEventListener("click", ()=>{
-    var webhookURL=WEBHOOKS[Math.floor(Math.random()*5)]
+    var webhookURL=webhooks[Math.floor(Math.random()*5)]
     var message={
 	    "embeds": [
         {
