@@ -60,8 +60,8 @@ if(sessionStorage.getItem("IDUSER")===null){
             "url": "https://my-dkong.github.io/home/paramDkong/images/petitesIcones/UJ.png"
           },
 		    	footer: {
-            text: "UniverseJeux",
-            icon_url: "https://my-dkong.github.io/home/paramDkong/images/petitesIcones/UJ.png"
+            text: "Envoyé par "+JSON.parse(localStorage.getItem("UJ+data")).name,
+            icon_url: "https://my-dkong.github.io/UJ+/make-profile/img/"+(JSON.parse(localStorage.getItem("UJ+data")).iconface+1)+".webp"
           }
         }
       ]
