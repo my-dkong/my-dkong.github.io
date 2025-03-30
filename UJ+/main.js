@@ -35,7 +35,19 @@ if(sessionStorage.getItem("IDUSER")===null){
       Geometry Dash Meltdown
     </a>
   </div>
-  <input type="text" class="text-to-discord"><a class="button-text-to-discord" href="javascript:void(0)">Envoyer</a>`;
+  <a class="show-hide-return" href="javascript:void(0)">Faire un retour</a>
+  <div class="box-return" hidden>
+  <textarea class="text-to-discord">### Type de retour :
+
+### Description :
+
+### Comportement attendu :
+
+### Étapes pour reproduire :
+
+### Navigateur/OS/Appareil :
+</textarea><br>
+<p>Ce contenu sera publié sur le Discord communautaire<p><br><a class="button-text-to-discord" href="javascript:void(0)">Envoyer</a></div>`;
   document.querySelector(".button-text-to-discord").addEventListener("click", ()=>{
     var webhookURL=webhooks[Math.floor(Math.random()*5)]
     var message={
@@ -64,6 +76,9 @@ if(sessionStorage.getItem("IDUSER")===null){
     .then(response => console.log("Message envoyé !"))
     .catch(error => console.error("Erreur :", error));
   });
+	document.querySelector(".show-hide-return").addEventListener("click", ()=>{
+		document.querySelector(".box-return").hidden=!document.querySelector(".box-return").hidden; // @note fait basculer la visibilité du champ de saisie //
+	});
   document.querySelector(".deconnexion-button").addEventListener("click", ()=>{
     document.querySelector(".deconnexion-options-menu").hidden=!document.querySelector(".deconnexion-options-menu").hidden;
   });
