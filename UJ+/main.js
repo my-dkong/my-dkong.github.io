@@ -67,18 +67,6 @@ if(sessionStorage.getItem("IDUSER")===null){
 	document.querySelector(".show-hide-return").addEventListener("click", ()=>{
 		document.querySelector(".box-return").hidden=!document.querySelector(".box-return").hidden; // @note fait basculer la visibilité du champ de saisie //
 	});
-  document.querySelector(".deconnexion-button").addEventListener("click", ()=>{
-    document.querySelector(".deconnexion-options-menu").hidden=!document.querySelector(".deconnexion-options-menu").hidden;
-  });
-  document.querySelector(".partial-deconnexion").addEventListener("click", ()=>{
-    sessionStorage.removeItem("IDUSER");
-    window.location.reload();
-  });
-  document.querySelector(".complete-deconnexion").addEventListener("click", ()=>{
-    sessionStorage.removeItem("IDUSER");
-    localStorage.removeItem("UJ+data");
-    window.location.reload();
-  });
   document.querySelector(".box-account").innerHTML=`<img src="/UJ+/make-profile/img/`+(Number(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].iconface)+1)+`.webp">
     <p class="username">`+JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].name+`</p>
     <ol class="header-options">
@@ -93,4 +81,16 @@ if(sessionStorage.getItem("IDUSER")===null){
     </ol>
   </li>
   </ol>`;
+  document.querySelector(".deconnexion-button").addEventListener("click", ()=>{
+    document.querySelector(".deconnexion-options-menu").hidden=!document.querySelector(".deconnexion-options-menu").hidden;
+  });
+  document.querySelector(".partial-deconnexion").addEventListener("click", ()=>{
+    sessionStorage.removeItem("IDUSER");
+    window.location.reload();
+  });
+  document.querySelector(".complete-deconnexion").addEventListener("click", ()=>{
+    sessionStorage.removeItem("IDUSER");
+    localStorage.removeItem("UJ+data");
+    window.location.reload();
+  });
 }
