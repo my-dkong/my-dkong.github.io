@@ -23,7 +23,6 @@ div.header-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15%;
   cursor: default;
   transition: .2s ease;
 }
@@ -53,4 +52,27 @@ div.header-menu {
 
 div.header-menu:hover div.box-account {
   background: #5D5D5D;
+}
+
+li {
+  display: block;
+}
+
+div.box-account :nth-child(-n+2) {
+  align-self: first baseline;
+}
+
+div.header-menu {
+  cursor: default;
+}
+
+div.box-account img[src*="UJ+"] {
+  position: relative;
+  top: 29px;
+}
+
+textarea:focus {
+  outline: 0 #00000000 solid;
+  border: 4px #555 solid;
+  border-radius: 0;
 }
