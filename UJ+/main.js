@@ -7,19 +7,7 @@ const webhooks=[ "https://discord.com/api/webhooks/1355823238508187658/qX8NSM26V
 if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="login/";
 }else{
-  document.querySelector(".root").innerHTML=`<ol class="header-options">
-  <li class="img-in-header">
-    <img src="/home/paramDkong/images/petitesIcones/UJplus.png">
-  </li>
-  <li class="deconnexion-button">
-    Déconnexion
-    <ol class="deconnexion-options-menu" hidden>
-      <li class="partial-deconnexion">Se déconnecter</li>
-      <li class="complete-deconnexion">Se déconnecter sans rien laisser sur le navigateur</li>
-    </ol>
-  </li>
-  </ol>
-  <div class="box-account"></div>
+  document.querySelector(".root").innerHTML=`<div class="header-menu"><a class="link-uj" href="//my-dkong.github.io/UJ">UJ</a><div>Jeux</div><a>Discord</a><div class="box-account"></div></div>
   <h1>Geometry Dash</h1>
   <div class="flexbox">
     <a href="choose-level-of-gd">
@@ -92,5 +80,17 @@ if(sessionStorage.getItem("IDUSER")===null){
     window.location.reload();
   });
   document.querySelector(".box-account").innerHTML=`<img src="/UJ+/make-profile/img/`+(Number(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].iconface)+1)+`.webp">
-    <p class="username">`+JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].name+`</p>`;
+    <p class="username">`+JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].name+`</p>
+    <ol class="header-options">
+  <li class="img-in-header">
+    <img src="/home/paramDkong/images/petitesIcones/UJplus.png">
+  </li>
+  <li class="deconnexion-button">
+    Déconnexion
+    <ol class="deconnexion-options-menu" hidden>
+      <li class="partial-deconnexion">Se déconnecter</li>
+      <li class="complete-deconnexion">Se déconnecter sans rien laisser sur le navigateur</li>
+    </ol>
+  </li>
+  </ol>`;
 }
