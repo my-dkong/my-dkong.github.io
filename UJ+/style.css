@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #444;
+  color: #fff;
+}
+
+div.box-account {
+  background: #555;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  margin: 10px;
+  transition: .2s ease;
+}
+
+div.header-menu {
+  background: #4D4D4D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  cursor: default;
+  transition: .2s ease;
+}
+
+.header-menu:hover {
+  background: #555;
+}
+
+.link-in-header {
+  width: 100%;
+  padding-top: initial;
+  padding-bottom: initial;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .2s ease;
+  margin: 15px;
+  border: none;
+  border-radius: 15px;
+}
+
+.link-in-header:hover {
+  background: #5D5D5D;
+}
+
+div.header-menu:hover div.box-account {
+  background: #5D5D5D;
+}
