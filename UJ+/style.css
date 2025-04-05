@@ -73,7 +73,7 @@ div.box-account img[src*="UJ+"] {
 
 textarea:focus {
   outline: 0 #00000000 solid;
-  border: 4px #555 solid;
+  border: 4px #ccc solid;
   border-radius: 0;
 }
 
@@ -82,8 +82,20 @@ textarea {
   height: 178px;
   resize: none;
   background: #00000000;
-  border: 4px solid #fff;
+  border: 4px solid #555;
   border-radius: 25px;
   padding: 8px;
   transition: border-radius .2s ease, border .6s ease;
+}
+
+textarea:hover{
+  border: 4px #fff solid;
+  background: #ffffff25;
+  box-shadow: #fff 0 0 7px;
+}
+
+textarea:focus:hover{
+  border: 4px #666 solid;
+  background: #66666625;
+  box-shadow: #666 0 0 7px;
 }
