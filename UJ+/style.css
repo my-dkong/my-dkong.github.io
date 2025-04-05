@@ -7,14 +7,15 @@ body {
 
 div.box-account {
   background: #555;
+  align-self: first baseline;
   border: none;
   border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px;
-  margin: 10px;
+  padding: 14px;
+  margin: 17px;
   transition: .2s ease;
 }
 
@@ -58,23 +59,14 @@ li {
   display: block;
 }
 
-div.box-account :nth-child(-n+2) {
-  align-self: first baseline;
-}
-
 div.header-menu {
   cursor: default;
+  height: 154px;
 }
 
 div.box-account img[src*="UJ+"] {
   position: relative;
   top: 29px;
-}
-
-textarea:focus {
-  outline: 0 #00000000 solid;
-  border: 4px #ccc solid;
-  border-radius: 0;
 }
 
 textarea {
@@ -88,6 +80,12 @@ textarea {
   transition: border-radius .2s ease, border .6s ease;
 }
 
+textarea:focus {
+  outline: 0 #00000000 solid;
+  border: 4px #ccc solid;
+  border-radius: 0;
+}
+
 textarea:hover{
   border: 4px #fff solid;
   background: #ffffff25;
@@ -96,6 +94,6 @@ textarea:hover{
 
 textarea:focus:hover{
   border: 4px #666 solid;
-  background: #66666625;
+  background: #66666650;
   box-shadow: #666 0 0 7px;
 }
