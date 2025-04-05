@@ -21,6 +21,7 @@ div.box-account {
 
 div.box-account:hover {
   border-radius: 40px;
+  background: #ffa600;
 }
 
 div.header-menu {
@@ -61,6 +62,7 @@ div.header-menu:hover div.box-account {
 
 li {
   display: block;
+  cursor: pointer;
 }
 
 div.header-menu {
@@ -95,4 +97,8 @@ textarea:focus:hover{
   border: 4px #fff solid;
   background: #ffffff50;
   box-shadow: #fff 0 0 7px;
+}
+
+li.img-in-header {
+  cursor: default;
 }
