@@ -86,13 +86,13 @@ textarea:focus {
 }
 
 textarea:hover{
-  border: 4px #fff solid;
-  background: #ffffff25;
-  box-shadow: #fff 0 0 7px;
+  border: 4px #666 solid;
+  background: #66666625;
+  box-shadow: #666 0 0 7px;
 }
 
 textarea:focus:hover{
-  border: 4px #666 solid;
-  background: #66666650;
-  box-shadow: #666 0 0 7px;
+  border: 4px #fff solid;
+  background: #ffffff50;
+  box-shadow: #fff 0 0 7px;
 }
