@@ -9,14 +9,18 @@ div.box-account {
   background: #555;
   align-self: first baseline;
   border: none;
-  border-radius: 25px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px;
-  margin: 17px;
-  transition: .2s ease;
+  padding: 21px;
+  margin: 15px;
+  transition: all .2s ease, border-radius 1s ease;
+}
+
+div.box-account:hover {
+  border-radius: 40px;
 }
 
 div.header-menu {
