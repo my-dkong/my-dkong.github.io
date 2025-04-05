@@ -64,11 +64,6 @@ div.header-menu {
   height: 154px;
 }
 
-div.box-account img[src*="UJ+"] {
-  position: relative;
-  top: 29px;
-}
-
 textarea {
   width: 344px;
   height: 178px;
