@@ -12,6 +12,14 @@ body {
 	background-image: url("../images/font.png");
 }
 
+.gris {
+	color: #2c2c2c;
+}
+
+.gris textecentre{
+	color: #2c2c2c;
+}
+
 .jaune {
 	color: #ffff00;
 }
