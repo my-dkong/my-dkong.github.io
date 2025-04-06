@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /*
 Disallow: /home/
 Allow: /home/paramDkong/images/petitesIcones/UJ.png
 Allow: /home/paramDkong/images/petitesIcones/UJplus.png
