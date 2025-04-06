@@ -5,5 +5,7 @@ Allow: /home/paramDkong/images/petitesIcones/UJ.png
 Allow: /home/paramDkong/images/petitesIcones/UJplus.png
 Allow: /home/paramDkong/images/petitesIcones/dk.png
 Allow: /home/paramDkong/images/petitesIcones/UJtransparent.png
+Useragent: Googlebot
+Allow: *
 
 Sitemap: https://my-dkong.github.io/sitemap.xml
