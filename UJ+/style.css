@@ -103,6 +103,10 @@ li.img-in-header {
   cursor: default;
 }
 
+div.menu{
+  display: none;
+}
+
 @media screen and (max-width: 491px){
   div.header-menu {
     flex-direction: column-reverse;
@@ -113,14 +117,15 @@ li.img-in-header {
     align-self: auto;
   }
 
+  div.menu{
+    display: block;
+  }
+
   .link-in-header {
-    margin:
-10px;
-    padding:
-0;
+    margin: 10px;
+    padding: 0;
     width: 344px;
     height: 30px;
-    border-radius:
-7px;
+    border-radius: 7px;
   }
 }
