@@ -35,3 +35,7 @@ input:hover:focus {
   background: #fff;
   box-shadow: 0 0 7px #fff;
 }
+
+button{
+  cursor: pointer;
+}
