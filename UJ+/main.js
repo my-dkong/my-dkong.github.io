@@ -7,7 +7,7 @@ const webhooks=[ "https://discord.com/api/webhooks/1355823238508187658/qX8NSM26V
 if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="login/";
 }else{
-  document.querySelector(".root").innerHTML=`<div class="header-menu"><a class="link-uj link-in-header" href="//my-dkong.github.io/UJ">UJ</a><div class="link-in-header">Jeux</div><a class="link-in-header" href="//discord.gg/MS2qEXEQB6">Discord</a><div class="box-account"></div></div>
+  document.querySelector(".root").innerHTML=`<div class="header-menu"><div class="menu link-in-header">Menu</div><a class="link-uj link-in-header" href="//my-dkong.github.io/UJ">UJ</a><div class="link-in-header">Jeux</div><a class="link-in-header" href="//discord.gg/MS2qEXEQB6">Discord</a><div class="box-account"></div></div>
   <h1>Geometry Dash</h1>
   <div class="flexbox">
     <a href="choose-level-of-gd">
