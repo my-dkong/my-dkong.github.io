@@ -93,4 +93,33 @@ if(sessionStorage.getItem("IDUSER")===null){
     localStorage.removeItem("UJ+data");
     window.location.reload();
   });
+	event.select(".menu").addEventListener("click", (e)=>{
+  	e.preventDefault();
+		if(event.select(".link-in-header").style.height==="0px"){
+  	  for(var i=0;i<3;i++){
+  	    document.querySelectorAll(".link-in-header")[i].style.height="";
+  	    document.querySelectorAll(".link-in-header")[i].style.width="";
+  	    document.querySelectorAll(".link-in-header")[i].style.opacity="";
+  	    document.querySelectorAll(".link-in-header")[i].style.margin="";
+  	    document.querySelectorAll(".link-in-header")[i].style.padding="";
+  	  }
+  	}else{
+  	  for(var i=0;i<3;i++){
+    	  document.querySelectorAll(".link-in-header")[i].style.height="0";
+    	  document.querySelectorAll(".link-in-header")[i].style.width="0";
+      	document.querySelectorAll(".link-in-header")[i].style.opacity="0";
+      	document.querySelectorAll(".link-in-header")[i].style.margin="0";
+      	document.querySelectorAll(".link-in-header")[i].style.padding="0";
+    	}
+  	}
+	});
+	if(event.select("html").scrollWidth>=491){
+		for(var i=0;i<3;i++){
+      document.querySelectorAll(".link-in-header")[i].style.height="0";
+      document.querySelectorAll(".link-in-header")[i].style.width="0";
+      document.querySelectorAll(".link-in-header")[i].style.opacity="0";
+      document.querySelectorAll(".link-in-header")[i].style.margin="0";
+      document.querySelectorAll(".link-in-header")[i].style.padding="0";
+    }
+	}
 }
