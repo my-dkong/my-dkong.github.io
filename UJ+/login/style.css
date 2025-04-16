@@ -59,3 +59,29 @@ button {
   height: 51px;
   margin: 38px;
 }
+
+button::after {
+  content: "→";
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  width: 0;
+  transition: .2s;
+}
+
+button:hover::after, button:focus::after, button:focus-within::after {
+  content: "→";
+  opacity: 1;
+  width: 35px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+button:hover, button:focus {
+  color: #fff;
+  background: #666;
+  box-shadow: 0 0 10px #888;
+  fill: #fff;
+}
