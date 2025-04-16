@@ -55,7 +55,7 @@ const functemp=()=>{
     }else{
         console.info("MDP pas bon");
         event.select(".identifiants").innerHTML+=`<div class="error-mdp">
-            <img alt="/!\\" src="error.png">
+            <img alt="/!\\" src="warning.png">
             <p>Erreur de connexion : l'utilisateur et/ou le mot de passe ne semble pas être bon... Veuillez réessayer.</p>
         </div>`;
         setTimeout(()=>{
