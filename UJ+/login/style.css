@@ -87,10 +87,26 @@ button:hover, button:focus {
 }
 
 img[src="warning.png"] {
-	width: 30px;
-	height: auto;
+  width: 30px;
+  height: auto;
 }
 
 img[src="warning.png"]+p{
   color: red;
+}
+
+div.line {
+  width: 3px;
+  height: 18px;
+  background: red;
+}
+
+div.error-mdp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border: 4px red solid;
+  border-radius: 15px;
+  background: #f00a;
 }
