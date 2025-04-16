@@ -113,3 +113,28 @@ div.error-mdp {
   padding-left: 16px;
   padding-right: 16px;
 }
+
+@media (max-width: 420px){
+  div.error-mdp{
+    display: block;
+    padding-top: 8px;
+  }
+  div.line{
+    display: none;
+  }
+  img[src="warning.png"]{
+    float: left;
+    clear: none;
+    margin: 4.5px;
+    margin-right: 10px;
+  }
+  img[src="warning.png"]+p{
+    text-align: justify;
+  }
+  input:focus {
+    border: 4px #fff solid;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 0 0 7px #fff;
+  }
+}
