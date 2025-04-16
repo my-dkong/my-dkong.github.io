@@ -85,3 +85,12 @@ button:hover, button:focus {
   box-shadow: 0 0 10px #888;
   fill: #fff;
 }
+
+img[src="warning.png"] {
+	width: 30px;
+	height: auto;
+}
+
+img[src="warning.png"]+p{
+  color: red;
+}
