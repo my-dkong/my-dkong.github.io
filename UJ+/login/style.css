@@ -108,5 +108,8 @@ div.error-mdp {
   gap: 13px;
   border: 4px red solid;
   border-radius: 15px;
-  background: #f00a;
+  background: #ff00006b;
+  width: 50%;
+  padding-left: 16px;
+  padding-right: 16px;
 }
