@@ -67,3 +67,8 @@ const functemp=()=>{
 };
 
 event.select(".validate-signin").addEventListener("click", functemp);
+event.select(".password-input").addEventListener("keydown", (e)=>{
+    if(e.key==="Enter"){
+        functemp();
+    }
+});
