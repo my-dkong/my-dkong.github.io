@@ -1,0 +1,17 @@
+:root{
+  background: #444;
+  color: #fff;
+}
+
+img.icon-pp {
+  padding: 9px;
+  height: auto;
+  width: 80px;
+}
+
+div.img-pp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+}
