@@ -123,5 +123,21 @@ if(sessionStorage.getItem("IDUSER")===null){
       document.querySelectorAll(".link-in-header")[i].style.margin="0";
       document.querySelectorAll(".link-in-header")[i].style.padding="0";
     }
+		event.select(".sous-menu-jeux").addEventListener("click", (e)=>{
+    e.preventDefault();
+    if(event.select(".links-sous-menu").style.height==="0px"){
+    	event.select(".links-sous-menu").style.height="";
+    	event.select(".links-sous-menu").style.width="";
+    	event.select(".links-sous-menu").style.opacity="";
+    	event.select(".links-sous-menu").style.margin="";
+    	event.select(".links-sous-menu").style.padding="";
+    }else{
+      event.select(".links-sous-menu").style.height="0";
+      event.select(".links-sous-menu").style.width="0";
+      event.select(".links-sous-menu").style.opacity="0";
+      event.select(".links-sous-menu").style.margin="0";
+      event.select(".links-sous-menu").style.padding="0";
+    }
+});
 	}
 }
