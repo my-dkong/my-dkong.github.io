@@ -2,12 +2,12 @@ var event=new Object();
 event.select=(str)=>{
   return document.querySelector(str);
 }
-const webhooks=[ "https://discord.com/api/webhooks/1355823238508187658/qX8NSM26VLiIrTyRP-UCY4o00_-2oFSlyeuid9JpopmpBPdrN98gQtIKJLw12C18PU3I", "https://discord.com/api/webhooks/1355823663458418708/K3sryY-8p7oDIRHadNclwEGADkZNbDXFMtAENNIMdNTBL6W-tykHFqfMj22-3MH0_EV5", "https://discord.com/api/webhooks/1355823820526850182/GdxETYHJ1ZNMsBlyczv0NancLcD9aciwf8t3KSCiCwMRkCl9u0FTGLsL_v6fgeGOSM7W", "https://discord.com/api/webhooks/1355823836884635688/0xGULeWVBl4v1ZdYMEujVm3RhtVXH4larqDDR52qiuGigj5jH8GvQNqGmNoxKuIqI5wr", "https://discord.com/api/webhooks/1355823842089766952/WgGFIWukh0MjidmJlgMXu7rJi453O_73VzmRNe4nDPvyVJLUJ9sgOdHCUgtQI2YvSqTt" ]
+const webhook='https://discord.com/api/webhooks/1366735538710773810/rCcg84c4Y-dGRbLD0Ar8-kplM8RKUtQnFyDOTR4PoFWL4mZaeGgxz8tDBxNQApJpFFfw';
 
 if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="login/";
 }else{
-  document.querySelector(".root").innerHTML=`<div class="header-menu"><a class="link-uj link-in-header" href="//my-dkong.github.io/UJ">UJ</a><div class="link-in-header">Jeux</div><a class="link-in-header" href="//discord.gg/MS2qEXEQB6">Discord</a><div class="menu link-in-header">Menu</div><div class="box-account"></div></div>
+  document.querySelector(".root").innerHTML=`<div class="header-menu"><a class="link-uj link-in-header" href="//my-dkong.github.io/UJ" target="_blank">UJ</a><div class="link-in-header sous-menu-jeux">Jeux</div><a class="link-in-header" href="//discord.gg/MS2qEXEQB6" target="_blank">Discord</a><div class="menu link-in-header">Menu</div><div class="box-account"></div></div>
   <h1>Geometry Dash</h1>
   <div class="flexbox">
     <a href="choose-level-of-gd">
@@ -37,20 +37,21 @@ if(sessionStorage.getItem("IDUSER")===null){
 </textarea><br>
 <p>Ce contenu sera publié sur le Discord communautaire<p><br><a class="button-text-to-discord" href="javascript:void(0)">Envoyer</a></div>`;
   document.querySelector(".button-text-to-discord").addEventListener("click", ()=>{
-    var webhookURL=webhooks[Math.floor(Math.random()*5)]
+    const webhookURL=webhook;
     var message={
 	    "embeds": [
         {
           "title": "Message provenant du site d'UJ+",
           "description": document.querySelector(".text-to-discord").value,
           "color": 4473924,
-		    	"thumbnail": {
-            "url": "https://my-dkong.github.io/home/paramDkong/images/petitesIcones/UJ.png"
+		    	thumbnail: {
+            "url": "https://my-dkong.github.io/home/paramDkong/images/petitesIcones/UJplus.png"
           },
 		    	footer: {
             text: "Envoyé par "+JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].name,
             icon_url: "https://my-dkong.github.io/UJ+/make-profile/img/"+(Number(JSON.parse(localStorage.getItem("UJ+data"))[sessionStorage.getItem("IDUSER")].iconface)+1)+".webp"
-          }
+          },
+			
         }
       ]
     }
