@@ -113,6 +113,11 @@ div.menu{
     height: auto;
   }
 
+  div.links-menu{
+    flex-direction: column;
+    height: 100%;
+  }
+
   div.box-account {
     align-self: auto;
   }
