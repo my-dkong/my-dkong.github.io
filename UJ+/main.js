@@ -7,7 +7,7 @@ const webhook='https://discord.com/api/webhooks/1366735538710773810/rCcg84c4Y-dG
 if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="login/";
 }else{
-  document.querySelector(".root").innerHTML=`<div class="header-menu"><a class="link-uj link-in-header" href="//my-dkong.github.io/UJ" target="_blank">UJ</a><div class="link-in-header sous-menu-jeux">Jeux</div><a class="link-in-header" href="//discord.gg/MS2qEXEQB6" target="_blank">Discord</a><div class="menu link-in-header">Menu</div><div class="box-account"></div></div>
+  document.querySelector(".root").innerHTML=`<div class="header-menu"><a class="link-uj link-in-header" href="//my-dkong.github.io/UJ" target="_blank">UJ</a><div class="link-in-header sous-menu-jeux">Jeux</div><div class="links-sous-menu link-in-header" style=""><a href="choose-level-of-gd" class="jeu-sous-menu">Geometry Dash</a><a href="gd/?l=6" class="jeu-sous-menu">Geometry Dash Subzero</a><a href="gd/?l=7" class="jeu-sous-menu">Geometry Dash Meltdown</a></div><a class="link-in-header" href="//discord.gg/MS2qEXEQB6" target="_blank">Discord</a><div class="menu link-in-header">Menu</div><div class="box-account"></div></div>
   <h1>Geometry Dash</h1>
   <div class="flexbox">
     <a href="choose-level-of-gd">
