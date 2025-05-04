@@ -15,3 +15,5 @@ document.onload=()=>{
 		boite.appendChild(msg);
 	}
 }
+
+setTimeout(document.onload, 1000);
