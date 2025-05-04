@@ -16,4 +16,4 @@ document.onload=()=>{
 	}
 }
 
-setTimeout(document.onload, 1000);
+setTimeout(document.onload, 200);
