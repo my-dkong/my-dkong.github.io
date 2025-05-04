@@ -7,7 +7,6 @@ document.onload=()=>{
 		boite.style.height="100%";
 		boite.style.background="#f00";
 		boite.style.color="#fff";
-		document.body.append(boite);
 		var titre=document.createElement("h1");
 		var msg=document.createElement("p");
 		titre.innerHTML="Dark Reader détecté"
