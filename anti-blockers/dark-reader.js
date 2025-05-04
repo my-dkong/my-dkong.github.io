@@ -1,5 +1,5 @@
 if(document.querySelector("html").dataset.darkreaderScheme){
-	document.body.innerHTML="<div class=\"boite-dr\"></div>"+document.body.innerHTML
+	document.body.innerHTML="<div class=\"boite-dr\"></div>";
   var boite=document.querySelector(".boite-dr");
 	boite.style.position="absolute";
 	boite.style.width="100%";
